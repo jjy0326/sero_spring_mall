@@ -1,8 +1,8 @@
 package com.sero.sts.dao;
 
-public class QnaDAOImpl {
+public class LoginDAO{
 
-	public QnaDAOImpl() {
+	public LoginDAO() {
 		// TODO Auto-generated constructor stub
 	}
 

@@ -1,8 +1,8 @@
 package com.sero.sts.dao;
 
-public class OrderDAOImpl {
+public class MainDAO  {
 
-	public OrderDAOImpl() {
+	public MainDAO() {
 		// TODO Auto-generated constructor stub
 	}
 

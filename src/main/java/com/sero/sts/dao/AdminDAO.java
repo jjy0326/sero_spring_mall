@@ -1,8 +1,8 @@
 package com.sero.sts.dao;
 
-public class CartDAOImpl {
+public class AdminDAO  {
 
-	public CartDAOImpl() {
+	public AdminDAO() {
 		// TODO Auto-generated constructor stub
 	}
 

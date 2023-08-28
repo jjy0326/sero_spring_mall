@@ -1,9 +1,8 @@
 package com.sero.sts.dao;
 
-public class AdminDAO  {
+import org.springframework.stereotype.Repository;
 
-	public AdminDAO() {
-		// TODO Auto-generated constructor stub
-	}
+@Repository("adminDAO")
+public class AdminDAO  {
 
 }

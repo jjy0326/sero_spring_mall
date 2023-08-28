@@ -1,9 +1,6 @@
 package com.sero.sts.controller;
 
-public class UserMainController {
+public class UserMainController implements MallController {
 
-	public UserMainController() {
-		// TODO Auto-generated constructor stub
-	}
 
 }

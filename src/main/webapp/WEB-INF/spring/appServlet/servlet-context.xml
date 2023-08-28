@@ -29,32 +29,31 @@
 		<beans:property name="maxUploadSize" value="52428800" />
 		<beans:property name="maxInMemorySize" value="1000000" />
 		<beans:property name="defaultEncoding" value="utf-8" />
+	</beans:bean>
+	
+	<!-- 1. -->
+	<beans:bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<beans:property name="definitions">
+			<beans:list>
+				<beans:value>classpath:tiles/*.xml</beans:value>
 
-		<!-- 1. -->
-		<beans:bean id="tilesConfigurer"
-			class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
-			<beans:property name="definitions">
-				<beans:list>
-					<beans:value>classpath:tiles/*.xml</beans:value>
+				<!-- 2. -->
+			</beans:list>
+		</beans:property>
 
-					<!-- 2. -->
-				</beans:list>
-			</beans:property>
+		<beans:property name="preparerFactoryClass"
+			value="org.springframework.web.servlet.view.tiles2.SpringBeanPreparerFactory" />
 
-			<beans:property name="preparerFactoryClass"
-				value="org.springframework.web.servlet.view.tiles2.SpringBeanPreparerFactory" />
+	</beans:bean>
 
-		</beans:bean>
+	<!-- 3. -->
 
-		<!-- 3. -->
+	<beans:bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+		id="viewResolver">
 
-		<beans:bean
-			class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="viewResolver">
-
-			<beans:property name="viewClass"
-				value="org.springframework.web.servlet.view.tiles2.TilesView" />
-
-		</beans:bean>
+		<beans:property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles2.TilesView" />
 
 	</beans:bean>
 

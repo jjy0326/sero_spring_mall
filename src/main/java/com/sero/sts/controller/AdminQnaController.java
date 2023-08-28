@@ -1,6 +1,6 @@
 package com.sero.sts.controller;
 
-public class AdminQnaController {
+public class AdminQnaController implements MallController {
 
 	public AdminQnaController() {
 		// TODO Auto-generated constructor stub

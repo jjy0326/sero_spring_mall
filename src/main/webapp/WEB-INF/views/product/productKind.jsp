@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+99999<%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>  
    
 
@@ -15,10 +15,10 @@
 <%@ include file="sub_menu.jsp" %>
   <article>
     <h2> Item</h2>     
-    <c:forEach items="${productKindList }"  var="productVO">
+    <c:forEach items="${productVO }"  var="productVO">
       <div id="item">
-        <a href="${contextPath}/mall/ProductDetailAction.do?pseq=${productVO.pseq}"> 
-          <img src="../product_images/${productVO.image}" />
+        <a href="${contextPath}/mall/productDetail?pseq=${productVO.pseq}"> 
+          <img src="../resources/product_images/${productVO.image}" />
           <h3>${productVO.name} </h3>        
           <p>${productVO.price2} </p>
         </a>  

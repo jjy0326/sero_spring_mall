@@ -10,8 +10,6 @@
 %> 
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  /> 
     
-
-
 <meta charset="UTF-8">
 <script type="text/javascript">
 function go_cart(contextPath) {
@@ -25,8 +23,6 @@ function go_cart(contextPath) {
 	            
 	        }
 	    }
-	
-
 
 function go_order(contextPath) {
 	 document.formm.action = contextPath + "/mypages/orderInsert";
@@ -47,9 +43,9 @@ function go_order(contextPath) {
       <form  method="post" name="formm" >    
         <fieldset>
           <legend> Item detail Info</legend>  
-          <a href="${contextPath}/mall/ProductDetailAction.do?pseq=${productVO.pseq}">         
+          <a href="${contextPath}/mall/productDetail?pseq=${productVO.pseq}">         
             <span style="float: left;">
-              <img  src="../product_images/${productVO.image}"  />
+              <img  src="../resources/product_images/${productVO.image}"  />
             </span>              
             <h2> ${productVO.name} </h2>  
           </a>    

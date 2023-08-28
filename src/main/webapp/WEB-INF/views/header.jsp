@@ -10,10 +10,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Sero Footwear</title>
-<link href="${contextPath}/css/shopping.css" rel="stylesheet">
-<script type="text/javascript" src="${contextPath}/member/member.js"></script>
-<script type="text/javascript" src="${contextPath}/mypage/mypage.js"></script>
-</head>
+<link href="../resources/css/shopping.css" rel="stylesheet">
+<script type="text/javascript" src="./member/member.js"></script>
+<script type="text/javascript" src="./mypage/mypage.js"></script>
+</head>		
 
 <body>
 	<div id="wrap">
@@ -22,8 +22,8 @@
 			<!--로고 들어가는 곳 시작--->
 			<form name="" method="post"></form>
 			<div id="mall">
-				<a href="${contextPath}/mall"> <img
-					src="${contextPath}/images/logo.png" width="180" height="100" alt="nonageshop">
+				<a href="${contextPath}/mall/mainPage"> <img
+					src="../resources/images/logo.png" width="180" height="100" alt="nonageshop">
 				</a>
 			</div>
 			<!--로고 들어가는 곳 끝-->
@@ -56,16 +56,15 @@
 
 			<nav id="top_menu">
 				<ul>
-					<li><a href="${contextPath}/mall/ProductKindAction.do?kind=1">Heels</a>
+					<li><a href="${contextPath}/mall/ProductKind?kind=1">Heels</a>
 					</li>
-					<li><a href="${contextPath}/mall/ProductKindAction.do?kind=2">Boots</a>
+					<li><a href="${contextPath}/mall/ProductKind?kind=2">Boots</a>
 					</li>
-					<li><a href="${contextPath}/mall/ProductKindAction.do?kind=3">Sandals</a>
+					<li><a href="${contextPath}/mall/ProductKind?kind=3">Sandals</a>
 					</li>
-					<li><a href="${contextPath}/mall/ProductKindAction.do?kind=4">Sneakers</a>
+					<li><a href="${contextPath}/mall/ProductKind?kind=4">Sneakers</a>
 					</li>
-					<li><a href="${contextPath}/mall/ProductKindAction.do?kind=5">On
-							Sale</a></li>
+					<li><a href="${contextPath}/mall/ProductKind?kind=5">On Sale</a></li>
 				</ul>
 			</nav>
 			<div class="clear"></div>

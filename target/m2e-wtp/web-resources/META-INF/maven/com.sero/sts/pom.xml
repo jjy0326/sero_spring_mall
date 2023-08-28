@@ -9,7 +9,7 @@
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>1.8</java-version>
-		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>
+		<org.springframework-version>4.1.1.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
@@ -68,7 +68,7 @@
 					<artifactId>mail</artifactId>
 				</exclusion>
 				<exclusion>
-					<groupId>javax.jms</groupId>
+					 <groupId>javax.jms</groupId>
 					<artifactId>jms</artifactId>
 				</exclusion>
 				<exclusion>
@@ -228,10 +228,10 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.2.1</version>
 				<configuration>
-					<mainClass>org.test.int1.Main</mainClass>
+					 <mainClass>org.test.int1.Main</mainClass>
 				</configuration>
 			</plugin>
-
+  
 			<!-- ADD Maven WAR Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

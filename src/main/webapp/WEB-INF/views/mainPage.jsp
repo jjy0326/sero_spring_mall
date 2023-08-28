@@ -11,20 +11,20 @@
 <!--메인 이미지 들어가는 곳 시작 --->
 <div class="clear"></div>
 <div id="main_img">
-	<img src="${contextPath}/images/main_img.png" width="30%">
+	<img src="../resources/images/main_img.png" width="30%">
 </div>
 <!--메인 이미지 들어가는 곳 끝--->
-<form method="get" action="${contextPath}/mall">
+<form method="get" action="${contextPath}/mall/mainPage">
 	<div class="clear"></div>
 
 	<div id="front">
 		<h2>New Item</h2>
 		<div id="bestProduct">
-			<c:forEach items="${newProductList }" var="productVO">
+			<c:forEach items="${newProducts }" var="productVO">
 				<div id="item">
 					<a
-						href="${contextPath}/mall/ProductDetailAction.do?pseq=${productVO.pseq}">
-						<img src="product_images/${productVO.image}" />
+						href="${contextPath}/mall/productDetail?pseq=${productVO.pseq}">
+						<img src="../resources/product_images/${productVO.image}" />
 						<h3>${productVO.name}</h3>
 						<p>${productVO.price2}</p>
 					</a>
@@ -35,12 +35,12 @@
 
 		<h2>Best Item</h2>
 		<div id="bestProduct">
-			<c:forEach items="${bestProductList}" var="productVO">
+			<c:forEach items="${bestProducts }" var="productVO">
 				<div id="item">
 					<a
-						href="${contextPath}/mall/ProductDetailAction.do?pseq=${productVO.pseq}">
+						href="${contextPath}/mall/productDetail?pseq=${productVO.pseq}">
 
-						<img src="product_images/${productVO.image}" />
+						<img src="../resources/product_images/${productVO.image}" />
 						<h3>${productVO.name}</h3>
 						<p>${productVO.price2}</p>
 					</a>

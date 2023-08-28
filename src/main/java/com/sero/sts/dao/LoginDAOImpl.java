@@ -1,6 +1,6 @@
 package com.sero.sts.dao;
 
-public class LoginDAOImpl implements UserDAO {
+public class LoginDAOImpl{
 
 	public LoginDAOImpl() {
 		// TODO Auto-generated constructor stub

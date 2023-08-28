@@ -1,6 +1,6 @@
 package com.sero.sts.dao;
 
-public class CartDAOImpl implements UserDAO {
+public class CartDAOImpl {
 
 	public CartDAOImpl() {
 		// TODO Auto-generated constructor stub

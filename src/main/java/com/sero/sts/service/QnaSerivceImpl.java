@@ -1,6 +1,6 @@
 package com.sero.sts.service;
 
-public class QnaSerivceImpl implements UserService {
+public class QnaSerivceImpl {
 
 	public QnaSerivceImpl() {
 		// TODO Auto-generated constructor stub

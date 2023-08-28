@@ -1,6 +1,6 @@
 package com.sero.sts.controller;
 
-public class AdminMemberController implements MallController {
+public class AdminMemberController {
 
 	public AdminMemberController() {
 		// TODO Auto-generated constructor stub

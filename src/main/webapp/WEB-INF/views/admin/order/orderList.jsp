@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/admin/header.jsp"%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%@ include file="../header.jsp"%>
+<%@ include file="../sub_menu.jsp"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <script type="text/javascript">
@@ -80,6 +80,6 @@
 			value="주문처리(입금확인)" onClick="go_order_save()">
 	</form>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/admin/header.jsp"%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%@ include file="../header.jsp"%>
+<%@ include file="../sub_menu.jsp"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript" src="${contextPath}/product.js"></script>
@@ -53,6 +53,6 @@
 		<input class="btn" type="button" value="목록" onClick="go_list('${contextPath}','${tpage}')">
 	</form>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </body>
 </html>

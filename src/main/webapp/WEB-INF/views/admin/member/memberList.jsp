@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ include file="/admin/header.jsp"%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%@ include file="../header.jsp"%>
+<%@ include file="../sub_menu.jsp"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <script type="text/javascript">
@@ -70,6 +70,6 @@
 		value="강퇴 처리 (확인)" onClick="go_ban('${contextPath}')">
 	</form>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/admin/header.jsp"%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%@ include file="../header.jsp"%>
+<%@ include file="..sub_menu.jsp"%>
 
 <article>
 	<h1>상품수정</h1>
@@ -84,6 +84,6 @@
 		<input class="btn" type="button" value="취소" onClick="go_mov('${contextPath}','${tpage}')">
 	</form>
 </article>
-<%@ include file="/admin/footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </body>
 </html>

@@ -1,8 +1,8 @@
 package com.sero.sts.service;
 
-public class CartSerivceImpl  {
+public class CartServiceImpl  {
 
-	public CartSerivceImpl() {
+	public CartServiceImpl() {
 		// TODO Auto-generated constructor stub
 	}
 

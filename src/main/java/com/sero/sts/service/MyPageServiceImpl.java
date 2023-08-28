@@ -1,8 +1,8 @@
 package com.sero.sts.service;
 
-public class MyPageSerivceImpl {
+public class MyPageServiceImpl {
 
-	public MyPageSerivceImpl() {
+	public MyPageServiceImpl() {
 		// TODO Auto-generated constructor stub
 	}
 

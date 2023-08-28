@@ -1,8 +1,8 @@
 package com.sero.sts.service;
 
-public class LoginSerivceImpl {
+public class MainServiceImpl  {
 
-	public LoginSerivceImpl() {
+	public MainServiceImpl() {
 		// TODO Auto-generated constructor stub
 	}
 

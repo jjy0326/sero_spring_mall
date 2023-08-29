@@ -40,20 +40,18 @@ public class AdminMainController {
 	 * @return "admin/login" 로그인 실패 시
 	 **/
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String adminLogin() {
-		String msg = "";
+	public String adminLogin(HttpServletRequest request, HttpSession session) {
 		String workerId = request.getParameter("workerId").trim();
 		String workerPwd = request.getParameter("workerPwd").trim();
 		
-		request.setAttribute("message", msg);
 		session.setAttribute("workerId", workerId);
 
-		int result = adminService.workerCheck(workerId, workerPwd); 
-
-		if (result == 1) {
-			return "admin/product/productList";
+		if (adminService.checkWorker(workerId, workerPwd)) {
+			session.setAttribute("workerId", workerId);
+			return "redirect:admin/product/productList";
 		} else {
-			msg = "아이디/비밀번호 다시 확인해주세요.";
+			String msg = "아이디/비밀번호 다시 확인해주세요.";
+			request.setAttribute("message", msg);
 			return "admin/login";
 		}
 

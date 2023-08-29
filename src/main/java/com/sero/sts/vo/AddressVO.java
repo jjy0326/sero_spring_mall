@@ -12,6 +12,12 @@ public class AddressVO {
 
 	}
 
+	@Override
+	public String toString() {
+		return "AddressVO [zipNum=" + zipNum + ", sido=" + sido + ", gugun=" + gugun + ", dong=" + dong + ", zipCode="
+				+ zipCode + ", bunji=" + bunji + "]";
+	}
+
 	public String getzipNum() {
 		return zipNum;
 	}

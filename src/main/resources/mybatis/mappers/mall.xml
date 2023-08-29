@@ -21,9 +21,9 @@
 	</resultMap>
 
 	<!-- 새 상품 -->
-	<select id="newProduct" resultMap="proResult">
+	<select id="checkWorker" resultType="java.lang.String">
       <![CDATA[
-     	select *  from new_pro_view
+     	select pwd from worker where id=#{id}
       ]]>
 	</select>
 

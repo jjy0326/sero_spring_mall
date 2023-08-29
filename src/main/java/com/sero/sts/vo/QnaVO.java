@@ -14,6 +14,12 @@ public class QnaVO {
 	public QnaVO() {
 	}
 
+	@Override
+	public String toString() {
+		return "QnaVO [qseq=" + qseq + ", subject=" + subject + ", content=" + content + ", reply=" + reply + ", id="
+				+ id + ", rep=" + rep + ", indate=" + indate + "]";
+	}
+
 	public int getQseq() {
 		return qseq;
 	}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.user">
+
+	<select id="selectSeqOrderIng" parameterType="String" resultType="int">
+          <![CDATA[
+             select distinct oseq from order_view where id=#{id} and result=1 order by oseq desc
+          ]]>
+	</select>
+	
+	<select id="listOrderById" parameterType="java.util.Map" resultType="orderVO">
+          <![CDATA[
+             select * from order_view where id=#{id} and result like '%'||#{result}||'%' and oseq=#{oseq}
+          ]]>
+	</select>
+	
+	<select id="listCart" parameterType="String" resultType="cartVO">
+          <![CDATA[
+             select * from cart_view where id=#{id} order by cseq desc
+          ]]>
+	</select>
+	
+	<select id="selectMaxOseq" resultType="int">
+          <![CDATA[
+             select max(oseq) from orders
+          ]]>
+	</select>
+	
+	<insert id="insertOrder" parameterType="String">
+          <![CDATA[
+             insert into orders(oseq, id) values(orders_seq.nextval, #{id})
+          ]]>
+	</insert>
+	
+	<insert id="insertOrderDetail" parameterType="java.util.Map">
+          <![CDATA[
+             insert into order_detail(odseq, oseq, pseq, quantity) values(order_detail_seq.nextval, #{oseq}, #{pseq}, #{quantity})
+          ]]>
+	</insert>
+	
+	<update id="updateCartResult" parameterType="int">
+          <![CDATA[
+            update cart set result=2 where cseq=#{cseq}
+          ]]>
+	</update>
+	
+	<insert id="insertCart" parameterType="java.util.Map">
+          <![CDATA[
+            insert into cart(cseq, id, pseq, quantity) values(cart_seq.nextval, #{id}, #{pseq}, #{quantity})
+          ]]>
+	</insert>
+	
+	<delete id="deleteCart" parameterType="int">
+          <![CDATA[
+            delete cart where cseq=#{cseq}
+          ]]>
+	</delete>
+	
+
+  
+</mapper>

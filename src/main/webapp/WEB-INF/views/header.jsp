@@ -47,7 +47,7 @@
 					<li>/</li>
 					<li><a href="${contextPath}/mypages/cartList">CART</a></li>
 					<li>/</li>
-					<li><a href="${contextPath}/mypages/mypage">MY PAGE</a></li>
+					<li><a href="${contextPath}/userpages/mypage">MY PAGE</a></li>
 					<li>/</li>
 					<li><a href="${contextPath}/qnas/qnaList">Q&amp;A(1:1)</a>
 					</li>

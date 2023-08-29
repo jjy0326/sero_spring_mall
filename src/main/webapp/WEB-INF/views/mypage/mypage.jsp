@@ -26,7 +26,7 @@
 	    alert("삭제할 항목을 선택해 주세요.");
 	    
 	  } else {
-	    document.formm.action = contextPath + "/mypages/orderDelete";
+	    document.formm.action = contextPath + "/userpages/orderDelete";
 	    document.formm.submit();
 	  }
 	}
@@ -49,7 +49,7 @@
         <td> ${orderVO.oseq} </td>    
         <td> ${orderVO.pname} </td>
         <td> <fmt:formatNumber value="${orderVO.price2}" type="currency"/> </td>
-        <td> <a href="${contextPath}/mypages/orderDetail?oseq=${orderVO.oseq}"> 조회 </a></td>
+        <td> <a href="${contextPath}/userpages/orderDetail?oseq=${orderVO.oseq}"> 조회 </a></td>
       </tr>
       </c:forEach>    
       </table>   

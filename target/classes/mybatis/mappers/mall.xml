@@ -26,6 +26,13 @@
      	select pwd from worker where id=#{id}
       ]]>
 	</select>
+	
+		<!-- 새 상품 -->
+	<select id="showProductList" resultMap ="proResult">
+      <![CDATA[
+     	select * from product
+      ]]>
+	</select>
 
 	<!-- 베스트 상품 -->
 	<select id="bestProduct" resultMap="proResult">

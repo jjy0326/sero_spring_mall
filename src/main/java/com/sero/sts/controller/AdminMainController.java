@@ -17,10 +17,11 @@ public class AdminMainController {
 
 	@Autowired
 	private AdminService adminService;
-	@Autowired
-	private HttpServletRequest request;
 	
-	HttpSession session = request.getSession();
+//	@Autowired
+//	private HttpServletRequest request;
+	
+//	HttpSession session = request.getSession();
 	static Logger logger = LoggerFactory.getLogger(AdminMainController.class);
 
 	/**
@@ -30,7 +31,7 @@ public class AdminMainController {
 	 **/
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String adminIndex() {
-		return "admin/main";
+		return "/admin/main";
 	}
 
 	/**
@@ -52,7 +53,7 @@ public class AdminMainController {
 		} else {
 			String msg = "아이디/비밀번호 다시 확인해주세요.";
 			request.setAttribute("message", msg);
-			return "admin/login";
+			return "admin/main";
 		}
 
 	}
@@ -62,14 +63,14 @@ public class AdminMainController {
 	 * @author 명원식
 	 * @return "admin/main"
 	 **/
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String adminLogout() {
-	    HttpSession sessionCheck = request.getSession(false);
-		if (sessionCheck != null) {
-			session.invalidate();
-		}
-		return "admin/main";
-	}
+//	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+//	public String adminLogout() {
+//	    HttpSession sessionCheck = request.getSession(false);
+//		if (sessionCheck != null) {
+//			session.invalidate();
+//		}
+//		return "admin/main";
+//	}
 
 
 }

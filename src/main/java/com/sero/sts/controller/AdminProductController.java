@@ -23,7 +23,7 @@ public class AdminProductController {
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public List<ProductVO> productList() {
-		List<ProductVO> productList = adminService.listProduct();
+		List<ProductVO> productList = adminService.showProductList();
 		return productList;
 
 	}

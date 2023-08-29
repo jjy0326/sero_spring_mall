@@ -31,8 +31,8 @@ public class AdminService{
     	return result ==1;
 	}
 
-	public List<ProductVO> listProduct() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<ProductVO> showProductList() {
+		List<ProductVO> productList = adminDAO.showProductList();
+		return productList;
 	}
 }

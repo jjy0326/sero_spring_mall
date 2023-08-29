@@ -36,7 +36,7 @@
 		<div class="clear"></div>
 		<article>
 			<div id="loginform">
-				<form name="frm" method="post" action = "${contextPath}/mall/main/AdminLoginAction.do">
+				<form name="frm" method="post" action = "${contextPath}/admin/login">
 				
 					<table>
 						<tr>

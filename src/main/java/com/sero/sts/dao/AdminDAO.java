@@ -1,6 +1,7 @@
 package com.sero.sts.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -9,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
+
+import com.sero.sts.vo.ProductVO;
 
 @Repository("adminDAO")
 public class AdminDAO  {
@@ -28,6 +31,11 @@ public class AdminDAO  {
     	params.put("id", id);
     	params.put("pwd", pwd);
     	return sqlSession.selectOne("checkWorker", params);
+    }
+    
+    public List<ProductVO> showProductList() throws DataAccessException {
+    	List<ProductVO> productList = sqlSession.selectList("mapper.mall.showProductList");
+    	return productList;
     }
 
 }

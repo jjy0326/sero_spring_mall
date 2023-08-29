@@ -5,6 +5,7 @@
 <%@ include file="sub_menu.html" %>   
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />   
+
   <article>
     <h2>Join Us</h2>
     <form id="join" action="${contextPath}/members/joinForm" 
@@ -18,7 +19,7 @@ method="post" name="formm">
        제 1 장 총 칙
 
 제 1 조 (목적) 
-이 이용약관(이하 '약관')은 주식회사 Nonage(이하 회사라 합니다)와 이용 고객(이하 '회원')간에 회사가 제공하는 jjang0u.com서비스의 가입조건 및 이용에 관한 다음의 제반 사항과 기타 기본적인 사항을 구체적으로 규정함을 목적으로 합니다.
+이 이용약관(이하 '약관')은 주식회사 Nonage(이하 회사라 합니다)와 이용 고객(이하 '회원')간에 회사가 제공하는 서비스의 가입조건 및 이용에 관한 다음의 제반 사항과 기타 기본적인 사항을 구체적으로 규정함을 목적으로 합니다.
 
 제 2 조 (이용약관의 효력 및 변경) 
 (1) 이 약관은 Nonage 웹사이트(www.wownoage.com 이하 'Nonage 웹')에서 온라인으로 공시함으로써 효력을 발생하며, 합리적인 사유가 발생할 경우 관련법령에 위배되지 않는 범위 안에서 개정될 수 있습니다. 개정된 약관은 온라인에서 공지함으로써 효력을 발휘하며, 이용자의 권리 또는 의무 등 중요한 규정의 개정은 사전에 공지합니다.
@@ -196,4 +197,4 @@ method="post" name="formm">
       <input type="button" value="Next" class="submit"  onclick="go_next('${contextPath}')" style="float: right;"> 
     </form>
   </article>
-<%@ include file="../footer.jsp" %>  
+<%@ include file="/WEB-INF/views/footer.jsp" %>  

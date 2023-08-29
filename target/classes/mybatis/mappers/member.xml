@@ -6,6 +6,7 @@
 <mapper namespace="mapper.mall">
 
 <!-- 메인페이지 시작 -->
+
 	<!-- 새 상품 -->
 	<select id="newProduct" resultType="productVO" >
       <![CDATA[
@@ -34,5 +35,44 @@
       ]]>
 	</select>
 
+	<!-- login page -->
+		<select id="getMember" resultType="memberVO" parameterType="String">
+      <![CDATA[
+         select * from member where id = #{userid}	
+      ]]>
+	</select>
+
+	<insert id="insertMember" parameterType="memberVO">
+		<![CDATA[
+		 insert into member(id, pwd, name, zip_num, address, phone, email) 
+		 values (#{id}, #{pwd}, #{name}, #{zip_num}, #{address}, #{phone}, #{email})
+		]]>
+	</insert>
 	
+	<select id="listMember" resultType="memberVO" parameterType="java.util.Map">
+	    <![CDATA[
+	        select * from member
+	    ]]>
+	    <where>
+		    <choose>
+		        <when test="name != '' and name != null">
+		            and name like '%' || #{name} || '%'
+		        </when>		
+		    </choose>
+	    </where>
+	    order by indate desc
+	</select>
+	
+	<select id="findId" resultType="String" parameterType="java.util.Map">
+      <![CDATA[
+         select id from member where name=#{name} and email=#{email}
+      ]]>
+	</select>
+	
+	<select id="findPwd" resultType="String" parameterType="java.util.Map">
+      <![CDATA[
+         select PWD from member where id=#{id} and name=#{name} and email=#{email}
+      ]]>
+	</select>
+
 </mapper>

@@ -33,16 +33,24 @@ public class MainService  {
 
 
 	// 상세 페이지
+
 	public ProductVO productDetail(int pseq) throws DataAccessException {
+
 	    ProductVO productDetail = mainDAO.productDetail(pseq);
 	    return productDetail;
 	}
 
 	// 상품 카테고리
+
 		public List<ProductVO> productKind(int kind) throws DataAccessException {
+
 			List<ProductVO> productKind = mainDAO.productKind(kind);
 		    return productKind;
 		}
 
 
+
 }
+
+
+

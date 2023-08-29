@@ -31,7 +31,7 @@ public class MainDAO  {
 	}
 
 	// 상세 페이지
-	public ProductVO productDetail(int pseq) throws DataAccessException {
+	public ProductVO productDetail(int pseq) throws DataAccessException {	
 	    ProductVO productDetail = sqlsession.selectOne("mapper.mall.selectPseq", pseq);
 	    return productDetail;
 	}

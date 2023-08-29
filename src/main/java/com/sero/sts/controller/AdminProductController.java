@@ -62,9 +62,13 @@ public class AdminProductController {
 
 	}
 
-	@RequestMapping(value = "/updateForm", method = RequestMethod.GET)
-	public String updateForm() {
-		return null;
+	@RequestMapping(value = "/updateForm/{pseq}", method = RequestMethod.GET)
+	public String updateForm(@PathVariable("pseq") int pseq, Model model) {
+		ProductVO productVO = adminService.selectProduct(pseq);
+		
+		model.addAttribute("productVO", productVO);
+		
+		return "admin/product/productUpdate";
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)

@@ -21,20 +21,20 @@
 		if (count == 0) {
 			alert("주문처리할 항목을 선택해 주세요.");
 		} else {
-			document.frm.action = "${contextPath}/mall/order/AdminOrderSaveAction.do";
+			document.frm.action = "${contextPath}/admin/orderSave";
 			document.frm.submit();
 		}
 	}
 	
 	
 	function go_search(contextPath) { // 상품 목록에서 keyword 검색
-		document.frm.action = contextPath + "/mall/order/AdminOrderListAction.do";
+		document.frm.action = contextPath + "${contextPath}/admin/orderList";
 		document.frm.submit();
 	}
 </script>
 <article>
 	<h1>주문리스트</h1>
-	<form name="frm" method="post">
+	<form name="frm" method="get">
 		<table style="float: right;">
 			<tr>
 				<td>주문자 이름 <input type="text" name="key"> <input

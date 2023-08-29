@@ -9,24 +9,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Admin</title>
-<link rel="stylesheet" href="${contextPath}/admin/css/admin.css">
-<script type="text/javascript" src="${contextPath}/admin/product/product.js"></script>
+<link rel="stylesheet" href="./css/admin.css">
+<script type="text/javascript" src="./product/product.js"></script>
+<%--
 <c:choose>
-
-	<c:when test="${empty workerId}">
+  	<c:when test="${empty workerId}">
 		<script type="text/javascript">
 			location.href = "${contextPath}/mall";
 		</script>
-	</c:when>
+	</c:when> 	 
 </c:choose>
+ --%>
 </head>
 <body onload="go_ab()">
 	<div id="wrap">
 		<header>
 			<div id="logo">
 				<a href="${contextPath}/mall"> <img
-					style="width: 800px" src="${contextPath}/admin/images/bar_01.gif"> <img
-					src="${contextPath}/admin/images/text.gif">
+					style="width: 800px" src="../resource/admin/images/bar_01.gif"> <img
+					src="./images/text.gif">
 				</a>
 			</div>
 			<input class="btn" type="button" value="logout" style="float: right;"

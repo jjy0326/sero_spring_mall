@@ -6,7 +6,7 @@
 	function go_view(qseq) {
 		var theForm = document.frm;
 		theForm.qseq.value = qseq;
-		theForm.action = "${contextPath}/mall/qna/AdminQnaDetailAction.do";
+		theForm.action = "${contextPath}/admin/qnaDetail";
 		theForm.submit();
 	}
 </script>

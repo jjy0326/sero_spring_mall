@@ -4,21 +4,8 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mapper.mall">
-	<resultMap id="proResult" type="productVO">
-		<result property="pseq" column="pseq" />
-		<result property="name" column="name" />
-		<result property="kind" column="kind" />
-		<result property="price1" column="price1" />
-		<result property="price2" column="price2" />
-		<result property="price3" column="price3" />
-		<result property="content" column="content" />
-		<result property="image" column="image" />
-		<result property="useyn" column="useyn" />
-		<result property="bestyn" column="bestyn" />
-		<result property="indate" column="indate" />
 
-	</resultMap>
-
+<!-- 메인페이지 시작 -->
 	<!-- 새 상품 -->
 	<select id="newProduct" resultType="productVO" >
       <![CDATA[
@@ -47,4 +34,5 @@
       ]]>
 	</select>
 
+	
 </mapper>

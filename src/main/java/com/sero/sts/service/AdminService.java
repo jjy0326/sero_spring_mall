@@ -40,5 +40,10 @@ public class AdminService{
 	public ProductVO selectProduct(int pseq) throws DataAccessException {
 		return adminDAO.selectProduct(pseq);
 	}
+
+	public int updateProduct(ProductVO product) throws DataAccessException {
+		return adminDAO.updateProduct(product);
+		
+	}
 	
 }

@@ -43,5 +43,10 @@ public class AdminDAO  {
     	productView = sqlSession.selectOne("mapper.mall.selectProduct", pseq);
     	return productView;
     }
+ 
+    public int updateProduct(ProductVO product) throws DataAccessException {
+    	int result = sqlSession.update("mapper.mall.updateProduct", product);
+    	return result;
+    }
     
 }

@@ -16,6 +16,7 @@
 			<tr>
 				<th>상품분류</th>
 				<td colspan="5">${kind}</td>
+<%-- 				<td colspan="5">${productVO.kind}</td> --%>
 			</tr>
 			<tr>
 				<th align="center">상품 명</th>
@@ -46,11 +47,9 @@
 
 		</table>
 		<!--[8] 수정 버튼이 눌리면 상품 수정 페이지로 이동하되 현재 페이지와 상품 일련번호 값을 전달해 준다. -->
-<%-- 		<input class="btn" type="button" value="수정" onClick="go_mod('${contextPath}','${tpage}','${productVO.pseq}')"> --%>
 		<input class="btn" type="button" value="수정" onClick="window.location='${contextPath}/admin/product/updateForm/${productVO.pseq}'">
-		
 		<!--[9] 목록 버튼이 눌리면 상품 리스트 페이지로 이동하되 현재 페이지를 전달해 준다. -->
-		<input class="btn" type="button" value="목록" onClick="go_list('${contextPath}','${tpage}')">
+		<input class="btn" type="button" value="목록" onClick="window.location='${contextPath}/admin/product/productList'">
 	</form>
 </article>
 <%@ include file="../footer.jsp"%>

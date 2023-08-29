@@ -34,6 +34,13 @@
      	select * from product where pseq = #{pseq}
       ]]>
 	</select>
+	<update id="updateProduct" parameterType="productVO">
+	<![CDATA[
+		update product
+		set name=#{name}, price1=#{price1}, price2=#{price2}, price3=#{price3},
+		content=#{content}
+		where pseq=#{pseq}]]>
+	</update>
 
 
 	<!-- 베스트 상품 -->

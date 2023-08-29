@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -72,8 +73,14 @@ public class AdminProductController {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String updateProduct() {
-			return null;
+	public String updateProduct(@ModelAttribute("product") ProductVO product, Model model) {
+		adminService.updateProduct(product) ;
+//		model.addAttribute("productVO", product);
+
+		
+		return "redirect:admin/product/productDetail/" + product.getPseq();
+//		return "admin/product/detail/{pseq}";
+
 	}
 
 }

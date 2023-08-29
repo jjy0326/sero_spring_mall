@@ -45,12 +45,13 @@
     </where>
     order by result desc, oseq desc
 	</select>
-	
+
 	<!-- order 주문처리 -->
 	<update id="updateOrder" parameterType="orderVO">
 	  <![CDATA[
 	  update order_detail set result=2 where odseq=#{odseq}
 	  
 	]]>
+
 	</update>
 </mapper>

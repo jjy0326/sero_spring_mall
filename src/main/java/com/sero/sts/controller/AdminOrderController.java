@@ -38,11 +38,9 @@ public class AdminOrderController {
 	        System.out.println("주문 번호 처리: " + oseq);
 	        int oseqs = Integer.parseInt(oseq);
 	        adminService.orderUpdate(oseqs);
-	      
-	    }
-	 
 
-	    return "admin/order/orderList/{oseqs}";
+	    }
+	    return "redirect:/admin/orderList";
 	}
 
 }

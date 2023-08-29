@@ -5,7 +5,7 @@
 
 <article>
 	<h1>상품수정</h1>
-	<form name="frm" method="post" enctype="multipart/form-data">
+	<form name="frm" method="post" enctype="multipart/form-data" action="${contextPath}/admin/product/update">
 		<input type="hidden" name="pseq" value="${productVO.pseq}"> 
 		<input type="hidden" name="code"> 
 		<input type="hidden" name="nonmakeImg" value="${productVO.image}">
@@ -80,8 +80,8 @@
 				</td>
 			</tr>
 		</table>
-		<input class="btn" type="button" value="수정" onClick="go_mod_save('${contextPath}','${tpage}','${productVO.pseq}')"> 
-		<input class="btn" type="button" value="취소" onClick="go_mov('${contextPath}','${tpage}')">
+		<input class="btn" type="submit" value="수정"> 
+		<input class="btn" type="button" value="뒤 돌아가기" onClick="window.location='${contextPath}/admin/product/detail/${productVO.pseq}'">
 	</form>
 </article>
 <%@ include file="../footer.jsp"%>

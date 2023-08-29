@@ -91,7 +91,7 @@ public class MemberVO {
 
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", pwd=" + pwd + ", name=" + name + ", email=" + email + ", zipNum=" + zip_num
+		return "MemberVO [id=" + id + ", pwd=" + pwd + ", name=" + name + ", email=" + email + ", zip_num=" + zip_num
 				+ ", address=" + address + ", phone=" + phone + ", useyn=" + useyn + ", indate=" + indate + "]";
 	}
 	

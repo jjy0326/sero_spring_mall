@@ -54,4 +54,106 @@
 	]]>
 
 	</update>
+
+<!-- 메인페이지 시작 -->
+
+
+	<select id="checkWorker" resultType="java.lang.Integer">
+      <![CDATA[
+     	SELECT COUNT(*) FROM worker WHERE id=#{id} AND pwd=#{pwd}
+      ]]>
+	</select>
+	<select id="showProductList" resultMap="proResult">
+      <![CDATA[
+     	select * from product
+      ]]>
+	</select>
+	<select id="selectProduct" resultMap="proResult">
+      <![CDATA[
+     	select * from product where pseq = #{pseq}
+      ]]>
+	</select>
+	<update id="updateProduct" parameterType="productVO">
+	<![CDATA[
+		update product
+		set name=#{name}, price1=#{price1}, price2=#{price2}, price3=#{price3},
+		content=#{content}
+		where pseq=#{pseq}]]>
+	</update>
+
+
+	<!-- 베스트 상품 -->
+	<select id="bestProduct" resultType="productVO">
+      <![CDATA[
+     	select *  from best_pro_view
+      ]]>
+	</select>
+
+	<!-- 상품 번호 가져오기 -->
+	<select id="selectPseq" resultType="productVO" parameterType="int">
+    <![CDATA[
+        select * from product where pseq=#{pseq}   
+    ]]>
+	</select>
+
+	<!-- 상품 카테고리 -->
+	<select id="selectKind" resultType="productVO" parameterType="int">
+      <![CDATA[
+     	select * from product where kind=#{kind}
+      ]]>
+	</select>
+
+	<!-- login page -->
+		<select id="getMember" resultType="memberVO" parameterType="String">
+      <![CDATA[
+         select * from member where id = #{userid}	
+      ]]>
+	</select>
+
+	<insert id="insertMember" parameterType="memberVO">
+		<![CDATA[
+		 insert into member(id, pwd, name, zip_num, address, phone, email) 
+		 values (#{id}, #{pwd}, #{name}, #{zip_num}, #{address}, #{phone}, #{email})
+		]]>
+	</insert>
+	
+	<select id="listMember" resultType="memberVO" parameterType="java.util.Map">
+	    <![CDATA[
+	        select * from member
+	    ]]>
+	    <where>
+		    <choose>
+		        <when test="name != '' and name != null">
+		            and name like '%' || #{name} || '%'
+		        </when>		
+		    </choose>
+	    </where>
+	    order by indate desc
+	</select>
+	
+	<select id="selectAddressByDong" resultType="addressVO" parameterType="java.util.Map">
+	    <![CDATA[
+	        select * from address
+	    ]]>
+	    <where>
+		    <choose>
+		        <when test="dong != '' and dong != null">
+		            and dong like '%' || #{dong} || '%'
+		        </when>		
+		    </choose>
+	    </where>
+	</select>
+	
+	<select id="findId" resultType="String" parameterType="java.util.Map">
+      <![CDATA[
+         select id from member where name=#{name} and email=#{email}
+      ]]>
+	</select>
+	
+	<select id="findPwd" resultType="String" parameterType="java.util.Map">
+      <![CDATA[
+         select PWD from member where id=#{id} and name=#{name} and email=#{email}
+      ]]>
+	</select>
+
 </mapper>

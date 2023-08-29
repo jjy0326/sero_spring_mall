@@ -16,6 +16,12 @@ public class CartVO {
 
 	}
 
+	@Override
+	public String toString() {
+		return "CartVO [cseq=" + cseq + ", id=" + id + ", pseq=" + pseq + ", mname=" + mname + ", pname=" + pname
+				+ ", quantity=" + quantity + ", price2=" + price2 + ", indate=" + indate + "]";
+	}
+
 	public int getPrice2() {
 		return price2;
 	}

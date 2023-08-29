@@ -1,11 +1,11 @@
 package com.sero.sts.vo;
 
 public class AddressVO {
-	private String zipNum;
+	private String zip_Num;
 	private String sido;
 	private String gugun;
 	private String dong;
-	private String zipCode;
+	private String zip_Code;
 	private String bunji;
 
 	public AddressVO() {
@@ -13,11 +13,11 @@ public class AddressVO {
 	}
 
 	public String getzipNum() {
-		return zipNum;
+		return zip_Num;
 	}
 
 	public void setzipNum(String zipNum) {
-		this.zipNum = zipNum;
+		this.zip_Num = zipNum;
 	}
 
 	public String getSido() {
@@ -45,11 +45,11 @@ public class AddressVO {
 	}
 
 	public String getzipCode() {
-		return zipCode;
+		return zip_Code;
 	}
 
 	public void setzipCode(String zipCode) {
-		this.zipCode = zipCode;
+		this.zip_Code = zipCode;
 	}
 
 	public String getBunji() {

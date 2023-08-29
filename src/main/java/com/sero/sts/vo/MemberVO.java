@@ -7,7 +7,7 @@ public class MemberVO {
 	private String pwd;
 	private String name;
 	private String email;
-	private String zipNum;
+	private String zip_num;
 	private String address;
 	private String phone;
 	private String useyn;
@@ -50,11 +50,11 @@ public class MemberVO {
 	}
 
 	public String getZipNum() {
-		return zipNum;
+		return zip_num;
 	}
 
 	public void setZipNum(String zipNum) {
-		this.zipNum = zipNum;
+		this.zip_num = zipNum;
 	}
 
 	public String getAddress() {
@@ -91,7 +91,7 @@ public class MemberVO {
 
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", pwd=" + pwd + ", name=" + name + ", email=" + email + ", zipNum=" + zipNum
+		return "MemberVO [id=" + id + ", pwd=" + pwd + ", name=" + name + ", email=" + email + ", zipNum=" + zip_num
 				+ ", address=" + address + ", phone=" + phone + ", useyn=" + useyn + ", indate=" + indate + "]";
 	}
 	

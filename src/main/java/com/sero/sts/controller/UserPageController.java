@@ -126,7 +126,7 @@ public class UserPageController {
 
 		List<CartVO> cartList = myPageService.cartList(loginUser.getId());
 		int maxOseq = myPageService.orderInsert(cartList, loginUser.getId());
-		return "redirect:/mypages/orderList?oseq=" + maxOseq;
+		return "redirect:/userpages/orderList?oseq=" + maxOseq;
 	}
 	
 	@RequestMapping(value = "/cartList", method = RequestMethod.GET)
@@ -182,7 +182,7 @@ public class UserPageController {
 		}
 
 		for (String cseq2 : cseqArr) {
-		myPageService.cartDelete(cseq2);
+			myPageService.cartDelete(cseq2);
 		}
 		return "redirect:/userpages/cartList";
 	}

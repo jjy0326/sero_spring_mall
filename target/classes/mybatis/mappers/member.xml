@@ -7,6 +7,7 @@
 
 <!-- 메인페이지 시작 -->
 
+
 	<!-- 새 상품 -->
 	<select id="newProduct" resultType="productVO" >
       <![CDATA[
@@ -61,6 +62,19 @@
 		    </choose>
 	    </where>
 	    order by indate desc
+	</select>
+	
+	<select id="selectAddressByDong" resultType="addressVO" parameterType="java.util.Map">
+	    <![CDATA[
+	        select * from address
+	    ]]>
+	    <where>
+		    <choose>
+		        <when test="dong != '' and dong != null">
+		            and dong like '%' || #{dong} || '%'
+		        </when>		
+		    </choose>
+	    </where>
 	</select>
 	
 	<select id="findId" resultType="String" parameterType="java.util.Map">

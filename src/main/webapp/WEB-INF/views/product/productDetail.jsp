@@ -18,14 +18,14 @@ function go_cart(contextPath) {
 	    document.formm.quantity.focus();	
 	    
 	  } else {
-	            document.formm.action = contextPath + "/mypages/cartInsert";
+	            document.formm.action = contextPath + "/userpages/cartInsert";
 	            document.formm.submit();
 	            
 	        }
 	    }
 
 function go_order(contextPath) {
-	 document.formm.action = contextPath + "/mypages/orderInsert";
+	 document.formm.action = contextPath + "/userpages/orderInsert";
 	  document.formm.submit();
 	  alert("최종 구매완료");
 	

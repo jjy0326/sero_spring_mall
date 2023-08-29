@@ -43,7 +43,7 @@
 						<c:otherwise>
 							<li style="color: black">
 								${sessionScope.loginUser.name}(${sessionScope.loginUser.id})</li>
-							<li><a href="${contextPath}/members/logout">LOGOUT</a></li>
+							<li><a href="${contextPath}/userpages/logout">LOGOUT</a></li>
 						</c:otherwise>
 					</c:choose>
 					<li>/</li>

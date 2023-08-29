@@ -21,7 +21,7 @@ public class AddressDAO {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("dong", dong);
 		
-		List<AddressVO> list = sqlSession.selectList("mapper.address.selectAddressByDong", params);
+		List<AddressVO> list = sqlSession.selectList("mapper.mall.selectAddressByDong", params);
 		return list;
 	}
 

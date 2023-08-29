@@ -20,9 +20,9 @@
 	</resultMap>
 
 	<!-- 새 상품 -->
-	<select id="checkWorker" resultType="java.lang.String">
+	<select id="checkWorker" resultType="java.lang.Integer">
       <![CDATA[
-     	select pwd from worker where id=#{id}
+     	SELECT COUNT(*) FROM worker WHERE id=#{id} AND pwd=#{pwd}
       ]]>
 	</select>
 	

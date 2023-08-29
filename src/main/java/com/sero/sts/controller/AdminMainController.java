@@ -6,13 +6,13 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import com.sero.sts.service.AdminService;
 
 @RequestMapping("/admin")
-@RestController
+@Controller
 public class AdminMainController {
 
 	@Autowired
@@ -53,7 +53,7 @@ public class AdminMainController {
 		} else {
 			String msg = "아이디/비밀번호 다시 확인해주세요.";
 			request.setAttribute("message", msg);
-			return "admin/main";
+			return "/admin/main";
 		}
 
 	}

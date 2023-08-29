@@ -38,4 +38,10 @@ public class AdminDAO  {
     	return productList;
     }
 
+    public ProductVO selectProduct(int pseq) throws DataAccessException {
+    	ProductVO productView = null;
+    	productView = sqlSession.selectOne("mapper.mall.selectProduct", pseq);
+    	return productView;
+    }
+    
 }

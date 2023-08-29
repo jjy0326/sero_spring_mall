@@ -37,7 +37,7 @@
 						<tr>
 							<td height="23" align="center">${productVO.pseq}</td>
 							<td style="text-align: left; padding-left: 50px; padding-right: 0px;">
-								<a href="${contextPath}/mall/product/AdminProductDetailAction.do?pseq=${productVO.pseq}"> 
+								<a href="${contextPath}/admin/product/detail/${productVO.pseq}"> 
 									${productVO.name} 
 								</a>
 							</td>

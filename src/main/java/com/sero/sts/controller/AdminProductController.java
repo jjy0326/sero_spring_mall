@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,9 +25,9 @@ public class AdminProductController {
 	static Logger logger = LoggerFactory.getLogger(AdminMainController.class);
 
 	/**
-	 * MAV method of returning the productList display
+	 * MAV 방식으로 productList 반환
 	 * @author 명원식
-	 * @return admin/product/productList.jsp through ("admin/product/productList")
+	 * @return admin/product/productList.jsp ("admin/product/productList")를 통해
 	 **/
 	@RequestMapping(value = "/productList", method = RequestMethod.GET)
 //	public ModelAndView productList() {
@@ -38,7 +39,7 @@ public class AdminProductController {
 //	    return mav;
 //	}
 	/**
-	 * String method of returning the productList display
+	 * String 방식으로 productList 반환
 	 * @author 명원식
 	 * @return admin/product/productList.jsp
 	 **/
@@ -51,16 +52,24 @@ public class AdminProductController {
 	}
 
 
-	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public String productDetail() {
-		return null;
+	@RequestMapping(value = "/detail/{pseq}", method = RequestMethod.GET)
+	public String productDetail(@PathVariable("pseq") int pseq, Model model) {
+		ProductVO productVO = adminService.selectProduct(pseq);
+		
+		model.addAttribute("productVO", productVO);
+		
+		return "admin/product/productDetail";
 
+	}
+
+	@RequestMapping(value = "/updateForm", method = RequestMethod.GET)
+	public String updateForm() {
+		return null;
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String updateProduct() {
-		return null;
-
+			return null;
 	}
 
 }

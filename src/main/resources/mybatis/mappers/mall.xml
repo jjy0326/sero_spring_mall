@@ -19,22 +19,25 @@
 
 	</resultMap>
 
-	<!-- 새 상품 -->
 	<select id="checkWorker" resultType="java.lang.Integer">
       <![CDATA[
      	SELECT COUNT(*) FROM worker WHERE id=#{id} AND pwd=#{pwd}
       ]]>
 	</select>
-	
-		<!-- 새 상품 -->
-	<select id="showProductList" resultMap ="proResult">
+	<select id="showProductList" resultMap="proResult">
       <![CDATA[
      	select * from product
       ]]>
 	</select>
+	<select id="selectProduct" resultMap="proResult">
+      <![CDATA[
+     	select * from product where pseq = #{pseq}
+      ]]>
+	</select>
+
 
 	<!-- 베스트 상품 -->
-	<select id="bestProduct" resultType="productVO" >
+	<select id="bestProduct" resultType="productVO">
       <![CDATA[
      	select *  from best_pro_view
       ]]>

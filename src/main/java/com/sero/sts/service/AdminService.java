@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,15 +25,20 @@ public class AdminService{
 	/**
 	 * @param workerId
 	 * @param workerPwd
-	 * @return
+	 * @return result(1:true) or (!1:false)
 	 **/
-    public boolean checkWorker(String id, String pwd) {
+    public boolean checkWorker(String id, String pwd) throws DataAccessException {
         int result = adminDAO.checkWorker(id, pwd);
     	return result ==1;
 	}
 
-	public List<ProductVO> showProductList() {
+	public List<ProductVO> showProductList() throws DataAccessException {
 		List<ProductVO> productList = adminDAO.showProductList();
 		return productList;
 	}
+	
+	public ProductVO selectProduct(int pseq) throws DataAccessException {
+		return adminDAO.selectProduct(pseq);
+	}
+	
 }

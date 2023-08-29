@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.mall">
+	<resultMap id="proResult" type="productVO">
+		<result property="pseq" column="pseq" />
+		<result property="name" column="name" />
+		<result property="kind" column="kind" />
+		<result property="price1" column="price1" />
+		<result property="price2" column="price2" />
+		<result property="price3" column="price3" />
+		<result property="content" column="content" />
+		<result property="image" column="image" />
+		<result property="useyn" column="useyn" />
+		<result property="bestyn" column="bestyn" />
+		<result property="indate" column="indate" />
+
+	</resultMap>
+
+	<!-- 새 상품 -->
+	<select id="newProduct" resultType="productVO" >
+      <![CDATA[
+     	select *  from new_pro_view
+      ]]>
+	</select>
+
+	<!-- 베스트 상품 -->
+	<select id="bestProduct" resultType="productVO" >
+      <![CDATA[
+     	select *  from best_pro_view
+      ]]>
+	</select>
+
+	<!-- 상품 번호 가져오기 -->
+	<select id="selectPseq" resultType="productVO" parameterType="int">
+    <![CDATA[
+        select * from product where pseq=#{pseq}   
+    ]]>
+	</select>
+
+	<!-- 상품 카테고리 -->
+	<select id="selectKind" resultType="productVO" parameterType="int">
+      <![CDATA[
+     	select * from product where kind=#{kind}
+      ]]>
+	</select>
+	
+		<select id="getMember" resultType="memberVO" parameterType="String">
+      <![CDATA[
+         select * from member where id = #{userid}	
+      ]]>
+	</select>
+
+	<insert id="insertMember" parameterType="memberVO">
+		<![CDATA[
+		 insert into member(id, pwd, name, zip_num, address, phone, email) 
+		 values (#{id}, #{pwd}, #{name}, #{zip_num}, #{address}, #{phone}, #{email})
+		]]>
+	</insert>
+	
+	<select id="listMember" resultType="memberVO" parameterType="java.util.Map">
+	    <![CDATA[
+	        select * from member
+	    ]]>
+	    <where>
+		    <choose>
+		        <when test="name != '' and name != null">
+		            and name like '%' || #{name} || '%'
+		        </when>		
+		    </choose>
+	    </where>
+	    order by indate desc
+	</select>
+	
+	<select id="findId" resultType="String" parameterType="java.util.Map">
+      <![CDATA[
+         select id from member where name=#{name} and email=#{email}
+      ]]>
+	</select>
+	
+	<select id="findPwd" resultType="String" parameterType="java.util.Map">
+      <![CDATA[
+         select PWD from member where id=#{id} and name=#{name} and email=#{email}
+      ]]>
+	</select>
+
+</mapper>

@@ -5,6 +5,7 @@
 
 <mapper namespace="mapper.user">
 
+
 	<select id="selectSeqOrderIng" parameterType="String" resultType="int">
           <![CDATA[
              select distinct oseq from order_view where id=#{id} and result=1 order by oseq desc
@@ -59,6 +60,23 @@
           ]]>
 	</delete>
 	
+	<select id="listQna" parameterType="String" resultType="QnaVO">
+          <![CDATA[
+             select * from qna where id=#{id} order by qseq desc
+          ]]>
+	</select>
+	
+	<insert id="insertqna" parameterType="java.util.Map">
+          <![CDATA[
+            insert into qna (qseq, subject, content, id) values(qna_seq.nextval, #{subject}, #{content}, #{id})
+          ]]>
+	</insert>
+	
+	<select id="getQna" parameterType="int" resultType="QnaVO">
+          <![CDATA[
+             select * from qna where qseq=#{qseq}
+          ]]>
+	</select>
 
   
 </mapper>

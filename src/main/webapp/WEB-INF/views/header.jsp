@@ -10,8 +10,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Sero Footwear</title>
-<link href="${contextPath}/css/shopping.css" rel="stylesheet">
-<script type="text/javascript" src="${contextPath}/member/member.js"></script>
+<link href="${contextPath}/resources/css/shopping.css" rel="stylesheet">
+<script type="text/javascript" src="${contextPath}/resources/js/member.js"></script>
 <script type="text/javascript" src="${contextPath}/mypage/mypage.js"></script>
 </head>
 
@@ -22,8 +22,8 @@
 			<!--로고 들어가는 곳 시작--->
 			<form name="" method="post"></form>
 			<div id="mall">
-				<a href="${contextPath}/mall"> <img
-					src="${contextPath}/images/logo.png" width="180" height="100" alt="nonageshop">
+				<a href="${contextPath}/mall/mainPage"> <img
+					src="${contextPath}/resources/images/logo.png" width="180" height="100" alt="nonageshop">
 				</a>
 			</div>
 			<!--로고 들어가는 곳 끝-->
@@ -45,7 +45,7 @@
 						</c:otherwise>
 					</c:choose>
 					<li>/</li>
-					<li><a href="${contextPath}/mypages/cartList">CART</a></li>
+					<li><a href="${contextPath}/userpages/cartList">CART</a></li>
 					<li>/</li>
 					<li><a href="${contextPath}/userpages/mypage">MY PAGE</a></li>
 					<li>/</li>

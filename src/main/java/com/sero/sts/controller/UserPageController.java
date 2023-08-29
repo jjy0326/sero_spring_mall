@@ -29,7 +29,7 @@ public class UserPageController {
 	private MyPageService myPageService;
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public String contractList(Model model, HttpServletRequest request) {
+	public String mypage(Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		
 		

@@ -11,7 +11,7 @@
 <!--메인 이미지 들어가는 곳 시작 --->
 <div class="clear"></div>
 <div id="main_img">
-	<img src="../resources/images/main_img.png" width="30%">
+	<img src="${contextPath}/resources/images/main_img.png" width="10%">
 </div>
 <!--메인 이미지 들어가는 곳 끝--->
 <form method="get" action="${contextPath}/mall/mainPage">

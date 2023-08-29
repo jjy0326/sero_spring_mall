@@ -30,6 +30,6 @@
 				</a>
 			</div>
 			<input class="btn" type="button" value="logout" style="float: right;"
-				onClick="location.href='${contextPath}/mall/main/AdminLogoutAction.do'">
+				onClick="location.href='${contextPath}/admin/logout'">
 		</header>
 		<div class="clear"></div>

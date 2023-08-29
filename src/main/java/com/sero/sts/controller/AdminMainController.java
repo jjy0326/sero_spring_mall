@@ -49,7 +49,7 @@ public class AdminMainController {
 
 		if (adminService.checkWorker(workerId, workerPwd)) {
 			session.setAttribute("workerId", workerId);
-			return "redirect:admin/product/productList";
+			return "redirect:/admin/product/productList";
 		} else {
 			String msg = "아이디/비밀번호 다시 확인해주세요.";
 			request.setAttribute("message", msg);
@@ -63,14 +63,14 @@ public class AdminMainController {
 	 * @author 명원식
 	 * @return "admin/main"
 	 **/
-//	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-//	public String adminLogout() {
-//	    HttpSession sessionCheck = request.getSession(false);
-//		if (sessionCheck != null) {
-//			session.invalidate();
-//		}
-//		return "admin/main";
-//	}
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String adminLogout(HttpServletRequest request, HttpSession session) {
+	    HttpSession sessionCheck = request.getSession(false);
+		if (sessionCheck != null) {
+			session.invalidate();
+		}
+		return "admin/main";
+	}
 
 
 }

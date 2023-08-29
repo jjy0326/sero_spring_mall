@@ -3,7 +3,6 @@
       PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-
 <mapper namespace="mapper.mall">
 	<resultMap id="proResult" type="productVO">
 		<result property="pseq" column="pseq" />
@@ -35,23 +34,23 @@
 	</select>
 
 	<!-- 베스트 상품 -->
-	<select id="bestProduct" resultMap="proResult">
+	<select id="bestProduct" resultType="productVO" >
       <![CDATA[
      	select *  from best_pro_view
       ]]>
 	</select>
 
 	<!-- 상품 번호 가져오기 -->
-	<select id="selectPseq" resultMap="proResult">
-      <![CDATA[
-     	select * from product where pseq=?
-      ]]>
+	<select id="selectPseq" resultType="productVO" parameterType="int">
+    <![CDATA[
+        select * from product where pseq=#{pseq}   
+    ]]>
 	</select>
 
 	<!-- 상품 카테고리 -->
-	<select id="selectKind" resultMap="proResult">
+	<select id="selectKind" resultType="productVO" parameterType="int">
       <![CDATA[
-     	select * from product where kind=?
+     	select * from product where kind=#{kind}
       ]]>
 	</select>
 

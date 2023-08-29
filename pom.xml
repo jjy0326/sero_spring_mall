@@ -68,7 +68,7 @@
 					<artifactId>mail</artifactId>
 				</exclusion>
 				<exclusion>
-					<groupId>javax.jms</groupId>
+					 <groupId>javax.jms</groupId>
 					<artifactId>jms</artifactId>
 				</exclusion>
 				<exclusion>
@@ -228,10 +228,10 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.2.1</version>
 				<configuration>
-					<mainClass>org.test.int1.Main</mainClass>
+					 <mainClass>org.test.int1.Main</mainClass>
 				</configuration>
 			</plugin>
-
+  
 			<!-- ADD Maven WAR Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

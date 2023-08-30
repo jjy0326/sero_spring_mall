@@ -30,3 +30,9 @@ git branch 사용하여 협업
 ### 3. 로그 사용
 ![log](https://github.com/jjy0326/sero_spring_mall/assets/102834723/01202fb7-2bf3-47d9-9cbe-8ae14c7ce4a9)
 ![log_result](https://github.com/jjy0326/sero_spring_mall/assets/102834723/8278e1d2-5acc-4911-8ca9-48ea2fb28672)
+
+## ✨ 아쉬운 점
+#### 1. 깃을 충분히 공부하지 못해 깃으로 인해 발생한 오류 해결에 많은 시간을 소요함
+#### 2. 익숙하지 않은 쿼리로 인해 어려움을 겪음
+![sql error](https://github.com/jjy0326/sero_spring_mall/assets/102834723/672eefb8-070e-4d01-8c81-2ef34fc19d33)
+#### 3. 시간이 부족하여 @ResponseBody 와 @RestController를 사용하여 RESTful한 코드를 만들지 못해 아쉬움 

@@ -20,7 +20,10 @@ git branch 사용하여 협업
 
 ## ✨ 기존 코드와 달라진 점
 ### 1. Mybatis 사용하면서 DAO쪽 코드가 간결해짐
+#### pom.xml
 ![mybatis](https://github.com/jjy0326/sero_spring_mall/assets/102834723/1afc177e-3e92-4d14-ad6a-5ebc712052c1)
+#### jdbc.properties
+![properties](https://github.com/jjy0326/sero_spring_mall/assets/102834723/f9bce6e5-46ca-4d79-8354-dccdf9216fab)
 #### 기존 코드
 ![originaldao](https://github.com/jjy0326/sero_spring_mall/assets/102834723/2305a81a-33c9-4936-8ecc-4419a180fafd)
 #### Mybatis 사용한 코드

@@ -20,3 +20,6 @@ git branch 사용하여 협업
 ![mybatis](https://github.com/jjy0326/sero_spring_mall/assets/102834723/1afc177e-3e92-4d14-ad6a-5ebc712052c1)
 ### 2. 애너테이션(@) 사용
 ![annotation](https://github.com/jjy0326/sero_spring_mall/assets/102834723/516af7b6-d659-4ba8-bf0c-a2bc9ce79f58)
+### 3. 로그 사용
+![log](https://github.com/jjy0326/sero_spring_mall/assets/102834723/01202fb7-2bf3-47d9-9cbe-8ae14c7ce4a9)
+![log_result](https://github.com/jjy0326/sero_spring_mall/assets/102834723/8278e1d2-5acc-4911-8ca9-48ea2fb28672)

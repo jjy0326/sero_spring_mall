@@ -1,7 +1,11 @@
 package com.sero.sts.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sero.sts.service.AdminService;
@@ -26,6 +31,8 @@ public class AdminProductController {
 
 	@Autowired
 	private AdminService adminService;
+	@Autowired
+	private ServletContext servletContext;
 	
 	static Logger logger = LoggerFactory.getLogger(AdminMainController.class);
 
@@ -77,14 +84,22 @@ public class AdminProductController {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String updateProduct(@ModelAttribute("product") ProductVO product, Model model) {
-		System.out.println("짠"+product.toString());
-		adminService.updateProduct(product) ;
-//		model.addAttribute("productVO", product);
-
-		return "redirect:admin/product/productDetail/" + product.getPseq();
-//		return "admin/product/detail/{pseq}";
-
+	public String updateProduct(ProductVO product, @RequestParam("imageFile") MultipartFile imageFile)
+			throws IOException {
+		System.out.println("짠" + product.toString());
+		String savePath = servletContext.getRealPath("/resources/static/images/product_images/");
+		if (!imageFile.isEmpty()) {
+			String originalFilename = imageFile.getOriginalFilename();
+			String newFilename = UUID.randomUUID().toString()
+					+ originalFilename.substring(originalFilename.lastIndexOf("."));
+			File file = new File(savePath, newFilename);
+			imageFile.transferTo(file);
+			product.setImage(newFilename);
+			adminService.updateProduct(product);
+		}
+//		return "redirect:admin/product/productDetail/" + product.getPseq();
+		return "redirect:admin/product/productDetail/";
+		// return "redirect:admin/product/detail/{pseq}";
 	}
 	
 	

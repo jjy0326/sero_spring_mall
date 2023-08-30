@@ -10,5 +10,6 @@
 		<li><a href='${contextPath}/admin/orderList'> 주문리스트</a></li>
 		<li><a href='${contextPath}/admin/'> 회원리스트</a></li>
 		<li><a href='${contextPath}/admin/qnaPage'>Q&amp;A리스트</a></li>
+
 	</ul>
 </nav>

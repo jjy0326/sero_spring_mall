@@ -2,6 +2,9 @@ package com.sero.sts.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,13 +77,27 @@ public class AdminProductController {
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String updateProduct(@ModelAttribute("product") ProductVO product, Model model) {
+		System.out.println("짠"+product.toString());
 		adminService.updateProduct(product) ;
 //		model.addAttribute("productVO", product);
 
-		
 		return "redirect:admin/product/productDetail/" + product.getPseq();
 //		return "admin/product/detail/{pseq}";
 
 	}
+	
+	
+//	@RequestMapping(value = "/addForm/{pseq}", method = RequestMethod.GET)
+	@RequestMapping(value = "/addForm", method = RequestMethod.GET)
+	public String addForm(HttpServletRequest request, HttpServletResponse response) {
+		return "admin/product/productWrite";
+	}
+	
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public String addProduct(@ModelAttribute("product") ProductVO product, Model model) {
+		adminService.addProduct(product) ;
 
+		return "redirect:admin/product/productDetail/" + product.getPseq();
+
+	}
 }

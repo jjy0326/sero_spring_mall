@@ -5,6 +5,7 @@
 
 <mapper namespace="mapper.mall">
 
+<!-- ============================  ADMIN  =================================== -->
 	<!-- ========================= 관리자 QNA=================== -->
 	<!-- Qna 페이지 -->
 	<select id="selectQna" resultType="qnaVO">
@@ -55,13 +56,27 @@
 
 	</update>
 
-
+<!--  =====================roy 관리자 아이디 ===================== -->
 
 	<select id="checkWorker" resultType="java.lang.Integer">
       <![CDATA[
      	SELECT COUNT(*) FROM worker WHERE id=#{id} AND pwd=#{pwd}
       ]]>
 	</select>
+	
+		<select id="showMemberList" resultType="memberVO">
+      <![CDATA[
+     	select * from member
+      ]]>
+	</select>
+	
+	<delete id="removeMember" parameterType="String">
+      <![CDATA[
+     	delete from member where id=#{id}
+      ]]>
+	</delete>
+	
+<!--  =====================roy 관리자 Product ===================== -->	
 	<select id="showProductList" resultType="productVO">
       <![CDATA[
      	select * from product
@@ -72,16 +87,26 @@
      	select * from product where pseq = #{pseq}
       ]]>
 	</select>
+
 	<update id="updateProduct" parameterType="productVO">
 	<![CDATA[
-		update product
-		set name=#{name}, price1=#{price1}, price2=#{price2}, price3=#{price3},
-		content=#{content}
-		where pseq=#{pseq}]]>
+		UPDATE product 
+		SET name=#{name}, price1=#{price1}, price2=#{price2}, price3=#{price3}, content=#{content}, image=#{image} 
+		WHERE pseq=#{pseq}
+		]]>
 	</update>
 
-<!-- ================ 메인페이지 시작 ================ -->
+	<insert id="addProduct" parameterType="productVO">
+	<![CDATA[
+		insert into product(pseq, name, price1, price2, price3, content, image)
+		values(entryno_sequence.NEXTVAL, #{name}, #{price1}, #{price2}, #{price3}, #{content}, #{image})
+		]]>
+	</insert>
 
+
+<!-- ================================  USER ================================ -->
+
+<!-- ================ 준형 메인페이지 시작 ================ -->
 <!-- 새 상품 -->
 	<select id="newProduct" resultType="productVO" >
       <![CDATA[
@@ -107,7 +132,7 @@
       ]]>
 	</select>
 	
-	<!-- =============== 로그인 페이지 ================= -->
+	<!-- ================== 효경 로그인 페이지 ================== -->
 	<!-- login page -->
 		<select id="getMember" resultType="memberVO" parameterType="String">
       <![CDATA[

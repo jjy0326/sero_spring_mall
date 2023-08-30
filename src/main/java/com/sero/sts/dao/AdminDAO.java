@@ -10,10 +10,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
-
 import com.sero.sts.vo.OrderVO;
 import com.sero.sts.vo.ProductVO;
 import com.sero.sts.vo.QnaVO;
+import com.sero.sts.vo.MemberVO;
+
 
 @Repository
 public class AdminDAO {
@@ -25,18 +26,18 @@ public class AdminDAO {
 	}
 
 	@Autowired
-	private SqlSession sqlsession;
+	private SqlSession sqlSession;
 
 	// qna 리스트
 	public List<QnaVO> qnaList() throws DataAccessException {
-		List<QnaVO> qnaList = sqlsession.selectList("mapper.mall.selectQna");
+		List<QnaVO> qnaList = sqlSession.selectList("mapper.mall.selectQna");
 
 		return qnaList;
 	}
 
 	// qna 상세
 	public QnaVO qnaDetail(int qseq) throws DataAccessException {
-		QnaVO qnaDetail = sqlsession.selectOne("mapper.mall.detailQna", qseq);
+		QnaVO qnaDetail = sqlSession.selectOne("mapper.mall.detailQna", qseq);
 		return qnaDetail;
 	}
 
@@ -46,7 +47,7 @@ public class AdminDAO {
 		params.put("qseq", qseq);
 		params.put("reply", reply);
 
-		int result = sqlsession.update("mapper.mall.updateQna", params);
+		int result = sqlSession.update("mapper.mall.updateQna", params);
 		return result;
 	}
 	// -----------------------------------
@@ -56,7 +57,7 @@ public class AdminDAO {
 	    Map<String, Object> paramMap = new HashMap<String, Object>();
 	    paramMap.put("mname", mname);
 
-	    List<OrderVO> orderList = sqlsession.selectList("mapper.mall.selectOrder", paramMap);
+	    List<OrderVO> orderList = sqlSession.selectList("mapper.mall.selectOrder", paramMap);
 	    return orderList;
 	}
 	
@@ -64,7 +65,7 @@ public class AdminDAO {
 	public int updateOrder(int odseq) throws DataAccessException{
 		Map<String, Object> params = new HashMap<String,Object>();
 		params.put("odseq",odseq);
-		int result = sqlsession.update("mapper.mall.updateOrder", params);
+		int result = sqlSession.update("mapper.mall.updateOrder", params);
 		return result;
 		
 	}
@@ -78,23 +79,38 @@ public class AdminDAO {
     	Map<String, String> params = new HashMap<String, String>();
     	params.put("id", id);
     	params.put("pwd", pwd);
-    	return sqlsession.selectOne("checkWorker", params);
+    	return sqlSession.selectOne("checkWorker", params);
     }
     
     public List<ProductVO> showProductList() throws DataAccessException {
-    	List<ProductVO> productList = sqlsession.selectList("mapper.mall.showProductList");
+    	List<ProductVO> productList = sqlSession.selectList("mapper.mall.showProductList");
     	return productList;
     }
 
     public ProductVO selectProduct(int pseq) throws DataAccessException {
     	ProductVO productView = null;
-    	productView = sqlsession.selectOne("mapper.mall.selectProduct", pseq);
+    	productView = sqlSession.selectOne("mapper.mall.selectProduct", pseq);
     	return productView;
     }
  
     public int updateProduct(ProductVO product) throws DataAccessException {
-    	int result = sqlsession.update("mapper.mall.updateProduct", product);
+    	int result = sqlSession.update("mapper.mall.updateProduct", product);
     	return result;
     }
+
+	public int addProduct(ProductVO product) throws DataAccessException {
+		int result = sqlSession.insert("mapper.mall.addProduct", product);
+		return result;
+	}
+
+    public List<MemberVO> showMemberList() throws DataAccessException {
+    	List<MemberVO> memberList = sqlSession.selectList("mapper.mall.showMemberList");
+    	return memberList;
+    }
+
+	public int removeMember(String id) throws DataAccessException {
+		int result = sqlSession.delete("mapper.mall.removeMember", id);
+		return result;
+	}
 
 }

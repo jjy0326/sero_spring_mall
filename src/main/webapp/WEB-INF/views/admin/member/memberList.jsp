@@ -17,7 +17,7 @@
 		document.getElementsByName("key")[0].value = Array.from(document.querySelectorAll("input[name='useyn']:checked")).map(function(checkbox) {
 		    return checkbox.value;
 		}).join(",");	
-		document.frm.action = contextPath + "/mall/member/AdminMemberBanAction.do";
+		document.frm.action = contextPath + "/admin/member/remove";
 		document.frm.submit();
 	}
 
@@ -25,7 +25,7 @@
 
 <article>
 	<h1>회원리스트</h1>
-	<form name="frm" method="post">
+	<form name="frm" method="post" action="${contextPath}/admin/member/remove">
 		<table style="float: right;">
 			<tr>
 				<td>회원 이름 <input type="text" name="key"> <input
@@ -50,10 +50,10 @@
 					<td>${memberVO.id}
 					<c:choose>
 							<c:when test='${memberVO.useyn=="y"}'>
-								<input type="checkbox" name="useyn" value="${memberId}">
+								<input type="checkbox" name="useyn" value="${memberVO.id}">
 							</c:when>
 							<c:otherwise>
-								<input type="checkbox" name="useyn" value="${memberId}" checked="checked"
+								<input type="checkbox" name="useyn" value="${memberVO.id}" checked="checked"
 									disabled="disabled">
 							</c:otherwise>
 						</c:choose></td>
@@ -66,8 +66,8 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<input type="button" class="btn" style="width: 200px"
-		value="강퇴 처리 (확인)" onClick="go_ban('${contextPath}')">
+<%-- 		<input type="button" class="btn" style="width: 200px" value="강퇴 처리 (확인)" onClick="go_ban('${contextPath}')"> --%>
+		<input type="submit" class="btn" style="width: 200px" value="강퇴 처리 (확인)">
 	</form>
 </article>
 <%@ include file="../footer.jsp"%>

@@ -13,7 +13,7 @@ git branch 사용하여 협업
 ### 2. 김효경 - Member
 ![login](https://github.com/jjy0326/sero_spring_mall/assets/102834723/7bb16ac4-f1ca-407e-bd73-336d83fa8b67)
 ### 3. 명원식 - Admin
-![admin1](https://github.com/jjy0326/sero_spring_mall/assets/102834723/8a71ebf2-9f41-4c33-ba07-382d7fa7f4d1)
+![admin1](https://github.com/jjy0326/sero_spring_mall/assets/102834723/8a71ebf2-9f41-4c33-ba07-382d7fa7f4d1) <br>
 ![admin2](https://github.com/jjy0326/sero_spring_mall/assets/102834723/ade04f7c-f206-438b-bb11-a065c7b14336)
 ### 4. 문효주 - Mypage, QnA
 ![qna_mypage](https://github.com/jjy0326/sero_spring_mall/assets/102834723/54d65941-5788-415d-a9b9-cfd2ae52c1dc)

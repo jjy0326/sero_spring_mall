@@ -6,7 +6,7 @@
 git branch 사용하여 협업
 
 ## ✨ 역할 분담
-### 1. 김준형 - Product, Mainpage, Admin
+### 1. 전준형 - Product, Mainpage, Admin
 ![mainpage](https://github.com/jjy0326/sero_spring_mall/assets/102834723/ba1d4538-2d9d-4bca-af66-e98b9ad86398)
 ![adminorder](https://github.com/jjy0326/sero_spring_mall/assets/102834723/6bb7492d-e3b7-4dce-af33-acbc3ddca7b2)
 ![admi4](https://github.com/jjy0326/sero_spring_mall/assets/102834723/2c34c251-0a16-4725-b6c1-55abd2d21ebc)

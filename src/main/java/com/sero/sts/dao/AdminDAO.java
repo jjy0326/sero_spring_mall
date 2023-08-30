@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+import com.sero.sts.vo.MemberVO;
 import com.sero.sts.vo.ProductVO;
 
 @Repository("adminDAO")
@@ -45,8 +46,23 @@ public class AdminDAO  {
     }
  
     public int updateProduct(ProductVO product) throws DataAccessException {
+    	System.out.println("얄루얄루야루랴"+product.toString());
     	int result = sqlSession.update("mapper.mall.updateProduct", product);
     	return result;
     }
-    
+
+	public int addProduct(ProductVO product) throws DataAccessException {
+		int result = sqlSession.insert("mapper.mall.addProduct", product);
+		return result;
+	}
+
+    public List<MemberVO> showMemberList() throws DataAccessException {
+    	List<MemberVO> memberList = sqlSession.selectList("mapper.mall.showMemberList");
+    	return memberList;
+    }
+
+	public int removeMember(String id) throws DataAccessException {
+		int result = sqlSession.delete("mapper.mall.removeMember", id);
+		return result;
+	}
 }

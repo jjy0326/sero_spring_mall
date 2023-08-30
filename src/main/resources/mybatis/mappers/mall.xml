@@ -4,43 +4,50 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mapper.mall">
-	<resultMap id="proResult" type="productVO">
-		<result property="pseq" column="pseq" />
-		<result property="name" column="name" />
-		<result property="kind" column="kind" />
-		<result property="price1" column="price1" />
-		<result property="price2" column="price2" />
-		<result property="price3" column="price3" />
-		<result property="content" column="content" />
-		<result property="image" column="image" />
-		<result property="useyn" column="useyn" />
-		<result property="bestyn" column="bestyn" />
-		<result property="indate" column="indate" />
 
-	</resultMap>
 
 	<select id="checkWorker" resultType="java.lang.Integer">
       <![CDATA[
      	SELECT COUNT(*) FROM worker WHERE id=#{id} AND pwd=#{pwd}
       ]]>
 	</select>
-	<select id="showProductList" resultMap="proResult">
+	<select id="showProductList" resultType="productVO">
       <![CDATA[
      	select * from product
       ]]>
 	</select>
-	<select id="selectProduct" resultMap="proResult">
+	<select id="selectProduct" resultType="productVO">
       <![CDATA[
      	select * from product where pseq = #{pseq}
       ]]>
 	</select>
+
 	<update id="updateProduct" parameterType="productVO">
 	<![CDATA[
-		update product
-		set name=#{name}, price1=#{price1}, price2=#{price2}, price3=#{price3},
-		content=#{content}
-		where pseq=#{pseq}]]>
+		UPDATE product 
+		SET name=#{name}, price1=#{price1}, price2=#{price2}, price3=#{price3}, content=#{content}, image=#{image} 
+		WHERE pseq=#{pseq}
+		]]>
 	</update>
+
+	<insert id="addProduct" parameterType="productVO">
+	<![CDATA[
+		insert into product(pseq, name, price1, price2, price3, content, image)
+		values(entryno_sequence.NEXTVAL, #{name}, #{price1}, #{price2}, #{price3}, #{content}, #{image})
+		]]>
+	</insert>
+
+	<select id="showMemberList" resultType="memberVO">
+      <![CDATA[
+     	select * from member
+      ]]>
+	</select>
+	
+	<delete id="removeMember" parameterType="String">
+      <![CDATA[
+     	delete from member where id=#{id}
+      ]]>
+	</delete>
 
 
 	<!-- 베스트 상품 -->

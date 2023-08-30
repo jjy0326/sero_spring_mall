@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import com.sero.sts.dao.AdminDAO;
+import com.sero.sts.vo.MemberVO;
 import com.sero.sts.vo.ProductVO;
 
 @Service("adminService")
@@ -43,7 +44,19 @@ public class AdminService{
 
 	public int updateProduct(ProductVO product) throws DataAccessException {
 		return adminDAO.updateProduct(product);
-		
 	}
 	
+	public int addProduct(ProductVO product) throws DataAccessException {
+		return adminDAO.addProduct(product);
+	}
+
+	public List<MemberVO> showMemberList() throws DataAccessException {
+		List<MemberVO> memberList = adminDAO.showMemberList();
+		return memberList;
+	}
+
+	public int removeMember(String id) throws DataAccessException {
+		return adminDAO.removeMember(id);
+		
+	}
 }

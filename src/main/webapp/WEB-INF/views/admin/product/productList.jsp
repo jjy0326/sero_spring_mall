@@ -12,7 +12,7 @@
 				<td width="642">상품명 <input type="text" name="key"> 
 					<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search('${contextPath}')"> 
 					<input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total('${contextPath}','${tpage}')">
-					<input class="btn" type="button" name="btn_write" value="상품등록"  onClick="go_wrt('${contextPath}')">
+					<input class="btn" type="button" name="btn_write" value="상품등록"  onClick="window.location='${contextPath}/admin/product/addForm'">
 				</td>
 			</tr>
 		</table>

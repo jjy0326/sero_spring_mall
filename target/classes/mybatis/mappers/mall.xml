@@ -5,7 +5,7 @@
 
 <mapper namespace="mapper.mall">
 
-	<!-- =========================QNA=================== -->
+	<!-- ========================= 관리자 QNA=================== -->
 	<!-- Qna 페이지 -->
 	<select id="selectQna" resultType="qnaVO">
       <![CDATA[
@@ -29,7 +29,7 @@
       ]]>
 	</select>
 
-	<!-- =========================Order=================== -->
+	<!-- =========================관리자 Order=================== -->
 
 	<!-- order 리스트 -->
 	<select id="selectOrder" parameterType="java.util.Map" resultType="orderVO">
@@ -55,7 +55,6 @@
 
 	</update>
 
-<!-- 메인페이지 시작 -->
 
 
 	<select id="checkWorker" resultType="java.lang.Integer">
@@ -63,12 +62,12 @@
      	SELECT COUNT(*) FROM worker WHERE id=#{id} AND pwd=#{pwd}
       ]]>
 	</select>
-	<select id="showProductList" resultMap="proResult">
+	<select id="showProductList" resultType="productVO">
       <![CDATA[
      	select * from product
       ]]>
 	</select>
-	<select id="selectProduct" resultMap="proResult">
+	<select id="selectProduct" resultType="productVO">
       <![CDATA[
      	select * from product where pseq = #{pseq}
       ]]>
@@ -81,35 +80,40 @@
 		where pseq=#{pseq}]]>
 	</update>
 
+<!-- ================ 메인페이지 시작 ================ -->
 
+<!-- 새 상품 -->
+	<select id="newProduct" resultType="productVO" >
+      <![CDATA[
+     	select *  from new_pro_view
+      ]]>
+	</select>
 	<!-- 베스트 상품 -->
-	<select id="bestProduct" resultType="productVO">
+	<select id="bestProduct" resultType="productVO" >
       <![CDATA[
      	select *  from best_pro_view
       ]]>
 	</select>
-
 	<!-- 상품 번호 가져오기 -->
 	<select id="selectPseq" resultType="productVO" parameterType="int">
     <![CDATA[
         select * from product where pseq=#{pseq}   
     ]]>
 	</select>
-
 	<!-- 상품 카테고리 -->
 	<select id="selectKind" resultType="productVO" parameterType="int">
       <![CDATA[
      	select * from product where kind=#{kind}
       ]]>
 	</select>
-
+	
+	<!-- =============== 로그인 페이지 ================= -->
 	<!-- login page -->
 		<select id="getMember" resultType="memberVO" parameterType="String">
       <![CDATA[
          select * from member where id = #{userid}	
       ]]>
 	</select>
-
 	<insert id="insertMember" parameterType="memberVO">
 		<![CDATA[
 		 insert into member(id, pwd, name, zip_num, address, phone, email) 
@@ -130,7 +134,7 @@
 	    </where>
 	    order by indate desc
 	</select>
-	
+
 	<select id="selectAddressByDong" resultType="addressVO" parameterType="java.util.Map">
 	    <![CDATA[
 	        select * from address
@@ -143,7 +147,7 @@
 		    </choose>
 	    </where>
 	</select>
-	
+
 	<select id="findId" resultType="String" parameterType="java.util.Map">
       <![CDATA[
          select id from member where name=#{name} and email=#{email}

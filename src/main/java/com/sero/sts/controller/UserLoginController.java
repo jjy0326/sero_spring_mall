@@ -83,9 +83,14 @@ public class UserLoginController {
 		model.addAttribute("addressList", loginService.findZipNum(dong));
 		return "member/findZipNum";
 	}
-
-	@RequestMapping(value = "/findIdForm", method = { RequestMethod.GET, RequestMethod.POST })
-	public String findIdForm(@RequestParam(defaultValue = "") String name,
+	
+	@RequestMapping(value = "/findIdForm", method = RequestMethod.GET)
+	public String findIdForm() {
+		return "member/findIdAndPassword";
+	}
+	
+	@RequestMapping(value = "/findId", method = RequestMethod.GET)
+	public String findId(@RequestParam(defaultValue = "") String name,
 			@RequestParam(defaultValue = "") String email, Model model) {
 		String memberId = "";
 		if (name != null && !name.trim().equals("") && email != null && !email.trim().equals("")) {
@@ -96,7 +101,7 @@ public class UserLoginController {
 		return "member/idfind";
 	}
 
-	@RequestMapping(value = "/findPwdForm", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/findPassword", method = { RequestMethod.GET, RequestMethod.POST })
 	public String findPwdForm(@RequestParam(defaultValue = "") String id, @RequestParam(defaultValue = "") String name,
 			@RequestParam(defaultValue = "") String email, Model model) {
 		String memberPwd = "";

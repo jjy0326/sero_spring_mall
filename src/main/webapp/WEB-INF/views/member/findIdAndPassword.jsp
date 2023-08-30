@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %> 
-<script type="text/javascript" src="script/findMemberIdAndPassword.js"></script>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  /> 
-<script type="text/javascript" src="${contextPath}/member/script/findMemberIdAndPassword.js"></script>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <article>
 	<center>

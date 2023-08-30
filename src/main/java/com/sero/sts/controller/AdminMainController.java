@@ -14,7 +14,7 @@ import com.sero.sts.service.AdminService;
 @RequestMapping("/admin")
 @Controller
 public class AdminMainController {
-
+	
 	@Autowired
 	private AdminService adminService;
 	
@@ -29,9 +29,9 @@ public class AdminMainController {
 	 * @author 명원식
 	 * @return "admin/main"
 	 **/
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String adminIndex() {
-		return "/admin/main";
+		return "admin/main";
 	}
 
 	/**
@@ -46,14 +46,14 @@ public class AdminMainController {
 		String workerPwd = request.getParameter("workerPwd").trim();
 		
 		session.setAttribute("workerId", workerId);
-
+        System.out.println(workerId+"아이디가져옴");
 		if (adminService.checkWorker(workerId, workerPwd)) {
 			session.setAttribute("workerId", workerId);
 			return "redirect:/admin/product/productList";
 		} else {
 			String msg = "아이디/비밀번호 다시 확인해주세요.";
 			request.setAttribute("message", msg);
-			return "/admin/main";
+			return "admin/main";
 		}
 
 	}

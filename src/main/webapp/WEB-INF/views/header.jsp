@@ -13,6 +13,7 @@
 
 <link href="${contextPath}/resources/css/shopping.css" rel="stylesheet">
 <script type="text/javascript" src="${contextPath}/resources/js/member.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/findMemberIdAndPassword.js"></script>
 <script type="text/javascript" src="${contextPath}/mypage/mypage.js"></script>
 </head>
 
@@ -35,7 +36,7 @@
 						<c:when test="${empty sessionScope.loginUser}">
 							<li><a href="${contextPath}/members/loginForm"
 								style="width: 110px;">LOGIN(CUSTOMER</a> <a
-								href="${contextPath}/mall/main?admin_login_form"
+								href="${contextPath}/admin"
 								style="width: 100px;">| ADMIN)</a></li>
 							<li>/</li>
 							<li><a href="${contextPath}/members/contract">JOIN</a></li>

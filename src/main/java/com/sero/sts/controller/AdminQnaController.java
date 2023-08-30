@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sero.sts.service.AdminService;
 import com.sero.sts.vo.QnaVO;
 
+@RequestMapping("/admin")
 @Controller
 public class AdminQnaController {
 
@@ -24,7 +25,7 @@ public class AdminQnaController {
 	AdminService adminService;
 
 	// 관리자 qna 리스트
-	@RequestMapping(value = "/admin/qnaPage", method = RequestMethod.GET)
+	@RequestMapping(value = "/qnaPage", method = RequestMethod.GET)
 	public String qnaPage(Model model) throws Exception {
 		List<QnaVO> qnaList = adminService.qnaList();
 		model.addAttribute("qnaList", qnaList);
@@ -33,23 +34,23 @@ public class AdminQnaController {
 	}
 
 	// 관리자 qna 상세 페이지
-	@RequestMapping(value = "/admin/qnaDetail", method = RequestMethod.POST)
+	@RequestMapping(value = "/qnaDetail", method = RequestMethod.POST)
 	public String qnaDetail(@RequestParam("qseq") String qseq, Model model) throws Exception {
 		int qseqs = Integer.parseInt(qseq);
 		QnaVO qnaVO = adminService.qnaDetail(qseqs);
 
 		model.addAttribute("qnaVO", qnaVO);
 		return "admin/qna/qnaDetail";
-	}
+	}	
 
 	// 관리자 qna 수정
-	@RequestMapping(value = "/admin/qnaModify", method = RequestMethod.GET)
+	@RequestMapping(value = "/qnaModify", method = RequestMethod.GET)
 	public String qnaModify(@RequestParam("qseq") String qseq, @RequestParam("reply") String reply, Model model)
 			throws Exception {
 		int qseqs = Integer.parseInt(qseq);
 		int qnaVO = adminService.qnaUpdate(qseqs, reply);
         model.addAttribute("qnaVO",qnaVO);
-		return "admin/qna/qnaList";
+		return "redirect:/admin/qna/qnaList";
 	}
 
 }

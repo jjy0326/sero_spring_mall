@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sero.sts.service.AdminService;
 import com.sero.sts.vo.OrderVO;
 
+@RequestMapping("/admin")
 @Controller
 public class AdminOrderController {
 
@@ -23,7 +24,7 @@ public class AdminOrderController {
 	@Autowired
 	private AdminService adminService;
 
-	@RequestMapping(value = "/admin/orderList", method = RequestMethod.GET)
+	@RequestMapping(value = "/orderList", method = RequestMethod.GET)
 	public String OrderList(Model model, @RequestParam(value = "key", required = false) String key) throws Exception {
 
 		List<OrderVO> orderList = adminService.orderList(key);
@@ -32,7 +33,7 @@ public class AdminOrderController {
 		return "admin/order/orderList";
 	}
 
-	@RequestMapping(value = "/admin/orderSave", method = RequestMethod.GET)
+	@RequestMapping(value = "/orderSave", method = RequestMethod.GET)
 	public String orderSave(@RequestParam(value = "result", required = false) String[] resultArr, Model model) throws Exception {	 
 	    for (String oseq : resultArr) {
 	        System.out.println("주문 번호 처리: " + oseq);

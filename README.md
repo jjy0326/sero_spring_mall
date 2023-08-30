@@ -32,6 +32,7 @@ git branch 사용하여 협업
 ![annotation](https://github.com/jjy0326/sero_spring_mall/assets/102834723/516af7b6-d659-4ba8-bf0c-a2bc9ce79f58)
 ### 3. System.out.println() 대신 로그 사용
 ![log](https://github.com/jjy0326/sero_spring_mall/assets/102834723/01202fb7-2bf3-47d9-9cbe-8ae14c7ce4a9)
+#### 콘솔 창
 ![log_result](https://github.com/jjy0326/sero_spring_mall/assets/102834723/8278e1d2-5acc-4911-8ca9-48ea2fb28672)
 
 ## ✨ 아쉬운 점

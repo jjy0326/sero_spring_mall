@@ -10,10 +10,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Sero Footwear</title>
-<link href="../resources/css/shopping.css" rel="stylesheet">
-<script type="text/javascript" src="./member/member.js"></script>
-<script type="text/javascript" src="./mypage/mypage.js"></script>
-</head>		
+
+<link href="${contextPath}/resources/css/shopping.css" rel="stylesheet">
+<script type="text/javascript" src="${contextPath}/resources/js/member.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/findMemberIdAndPassword.js"></script>
+<script type="text/javascript" src="${contextPath}/mypage/mypage.js"></script>
+</head>
+
 
 <body>
 	<div id="wrap">
@@ -22,8 +25,8 @@
 			<!--로고 들어가는 곳 시작--->
 			<form name="" method="post"></form>
 			<div id="mall">
-				<a href="${contextPath}/mall/mainPage"> <img
-					src="../resources/images/logo.png" width="180" height="100" alt="nonageshop">
+				<a href="${contextPath}/mall/mainPage"> <img src="${contextPath}/resources/images/logo.png" width="180" height="100" alt="nonageshop">
+
 				</a>
 			</div>
 			<!--로고 들어가는 곳 끝-->
@@ -33,7 +36,7 @@
 						<c:when test="${empty sessionScope.loginUser}">
 							<li><a href="${contextPath}/members/loginForm"
 								style="width: 110px;">LOGIN(CUSTOMER</a> <a
-								href="${contextPath}/mall/main?admin_login_form"
+								href="${contextPath}/admin"
 								style="width: 100px;">| ADMIN)</a></li>
 							<li>/</li>
 							<li><a href="${contextPath}/members/contract">JOIN</a></li>
@@ -41,13 +44,13 @@
 						<c:otherwise>
 							<li style="color: black">
 								${sessionScope.loginUser.name}(${sessionScope.loginUser.id})</li>
-							<li><a href="${contextPath}/members/logout">LOGOUT</a></li>
+							<li><a href="${contextPath}/userpages/logout">LOGOUT</a></li>
 						</c:otherwise>
 					</c:choose>
 					<li>/</li>
-					<li><a href="${contextPath}/mypages/cartList">CART</a></li>
+					<li><a href="${contextPath}/userpages/cartList">CART</a></li>
 					<li>/</li>
-					<li><a href="${contextPath}/mypages/mypage">MY PAGE</a></li>
+					<li><a href="${contextPath}/userpages/mypage">MY PAGE</a></li>
 					<li>/</li>
 					<li><a href="${contextPath}/qnas/qnaList">Q&amp;A(1:1)</a>
 					</li>

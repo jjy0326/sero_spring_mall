@@ -8,7 +8,7 @@ function findMemberId(contextPath) {
 		    document.findId.email.focus();
 		    return;
 	  }
-	  var url = contextPath + "/members/findMemberId?name=" 
+	  var url = contextPath + "/members/findId?name=" 
 	  + document.findId.name.value
 	  + "&email="
 	  + document.findId.email.value;

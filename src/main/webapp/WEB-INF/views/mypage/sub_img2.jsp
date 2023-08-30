@@ -3,6 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  /> 
 <div id="sub_img">
-	<img src="${contextPath}/images/mypage/sub_img.png" style="width:10%">		
+	<img src="${contextPath}/resources/images/mypage/sub_img.png" style="width:10%">		
 </div>
 <div class="clear"></div>

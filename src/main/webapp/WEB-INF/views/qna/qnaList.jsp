@@ -32,7 +32,7 @@
       <input type="button"  value="1:1 질문하기"  class="submit"    
 onclick="location.href='${contextPath}/qnas/qnaWriteForm'"> 
       <input type="button"    value="쇼핑 계속하기"  class="cancel"  
-onclick="location.href='${contextPath}/mall'">  
+onclick="location.href='${contextPath}/mall/mainPage'">  
       </div>
     </form>
   </article>

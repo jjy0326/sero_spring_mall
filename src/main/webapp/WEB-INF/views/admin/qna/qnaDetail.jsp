@@ -5,20 +5,20 @@
 <script type="text/javascript">
 	function go_list() {
 		var theForm = document.frm;
-		theForm.action = "${contextPath}/mall/qna/AdminQnaListAction.do";
+		theForm.action = "${contextPath}/admin/qnaPage";
 		theForm.submit();
 	}
 
 	function go_rep(qseq) {
 		var theForm = document.frm;
 		theForm.qseq.value = qseq;
-		theForm.action = "${contextPath}/mall/qna/AdminQnaResaveAction.do";
+		theForm.action = "${contextPath}/admin/qnaModify";
 		theForm.submit();
 	}
 </script>
 <article>
 	<h1>Q&amp;A 게시판</h1>
-	<form name="frm" method="post">
+	<form name="frm" method="get">
 		<input type="hidden" name="qseq">
 		<table id="orderList">
 			<tr>

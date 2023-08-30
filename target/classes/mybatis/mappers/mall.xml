@@ -5,12 +5,78 @@
 
 <mapper namespace="mapper.mall">
 
+<!-- ============================  ADMIN  =================================== -->
+	<!-- ========================= 관리자 QNA=================== -->
+	<!-- Qna 페이지 -->
+	<select id="selectQna" resultType="qnaVO">
+      <![CDATA[
+     	select * from qna order by indate desc
+      ]]>
+	</select>
+
+	<!-- qna 답변 -->
+	<update id="updateQna" parameterType="qnaVO">
+    <![CDATA[
+        UPDATE qna
+        SET reply=#{reply}, rep=2
+        WHERE qseq=#{qseq}
+    ]]>
+	</update>
+
+	<!-- qna 상세 -->
+	<select id="detailQna" resultType="qnaVO" parameterType="int">
+      <![CDATA[
+      select * from qna where qseq=#{qseq}
+      ]]>
+	</select>
+
+	<!-- =========================관리자 Order=================== -->
+
+	<!-- order 리스트 -->
+	<select id="selectOrder" parameterType="java.util.Map" resultType="orderVO">
+    	<![CDATA[
+    		select * from order_view 
+    	]]>
+    <where>
+	    <choose>
+	    	<when test="mname != '' and mname != null">
+		    	and mname like '%'||#{mname}||'%'    	
+	    	</when>
+	    </choose>
+    </where>
+    order by result desc, oseq desc
+	</select>
+
+	<!-- order 주문처리 -->
+	<update id="updateOrder" parameterType="orderVO">
+	  <![CDATA[
+	  update order_detail set result=2 where odseq=#{odseq}
+	  
+	]]>
+
+	</update>
+
+<!--  =====================roy 관리자 아이디 ===================== -->
 
 	<select id="checkWorker" resultType="java.lang.Integer">
       <![CDATA[
      	SELECT COUNT(*) FROM worker WHERE id=#{id} AND pwd=#{pwd}
       ]]>
 	</select>
+	
+		<select id="showMemberList" resultType="memberVO">
+      <![CDATA[
+     	select * from member
+      ]]>
+	</select>
+	
+	<delete id="removeMember" parameterType="String">
+      <![CDATA[
+     	delete from member where id=#{id}
+      ]]>
+	</delete>
+	
+<!--  =====================roy 관리자 Product ===================== -->	
 	<select id="showProductList" resultType="productVO">
       <![CDATA[
      	select * from product
@@ -37,37 +103,85 @@
 		]]>
 	</insert>
 
-	<select id="showMemberList" resultType="memberVO">
+
+<!-- ================================  USER ================================ -->
+
+<!-- ================ 준형 메인페이지 시작 ================ -->
+<!-- 새 상품 -->
+	<select id="newProduct" resultType="productVO" >
       <![CDATA[
-     	select * from member
+     	select *  from new_pro_view
       ]]>
 	</select>
-	
-	<delete id="removeMember" parameterType="String">
-      <![CDATA[
-     	delete from member where id=#{id}
-      ]]>
-	</delete>
-
-
 	<!-- 베스트 상품 -->
-	<select id="bestProduct" resultType="productVO">
+	<select id="bestProduct" resultType="productVO" >
       <![CDATA[
      	select *  from best_pro_view
       ]]>
 	</select>
-
 	<!-- 상품 번호 가져오기 -->
 	<select id="selectPseq" resultType="productVO" parameterType="int">
     <![CDATA[
         select * from product where pseq=#{pseq}   
     ]]>
 	</select>
-
 	<!-- 상품 카테고리 -->
 	<select id="selectKind" resultType="productVO" parameterType="int">
       <![CDATA[
      	select * from product where kind=#{kind}
+      ]]>
+	</select>
+	
+	<!-- ================== 효경 로그인 페이지 ================== -->
+	<!-- login page -->
+		<select id="getMember" resultType="memberVO" parameterType="String">
+      <![CDATA[
+         select * from member where id = #{userid}	
+      ]]>
+	</select>
+	<insert id="insertMember" parameterType="memberVO">
+		<![CDATA[
+		 insert into member(id, pwd, name, zip_num, address, phone, email) 
+		 values (#{id}, #{pwd}, #{name}, #{zip_num}, #{address}, #{phone}, #{email})
+		]]>
+	</insert>
+	
+	<select id="listMember" resultType="memberVO" parameterType="java.util.Map">
+	    <![CDATA[
+	        select * from member
+	    ]]>
+	    <where>
+		    <choose>
+		        <when test="name != '' and name != null">
+		            and name like '%' || #{name} || '%'
+		        </when>		
+		    </choose>
+	    </where>
+	    order by indate desc
+	</select>
+
+	<select id="selectAddressByDong" resultType="addressVO" parameterType="java.util.Map">
+	    <![CDATA[
+	        select * from address
+	    ]]>
+	    <where>
+		    <choose>
+		        <when test="dong != '' and dong != null">
+		            and dong like '%' || #{dong} || '%'
+		        </when>		
+		    </choose>
+	    </where>
+	</select>
+
+	<select id="findId" resultType="String" parameterType="java.util.Map">
+      <![CDATA[
+         select id from member where name=#{name} and email=#{email}
+      ]]>
+	</select>
+	
+	<select id="findPwd" resultType="String" parameterType="java.util.Map">
+      <![CDATA[
+         select PWD from member where id=#{id} and name=#{name} and email=#{email}
       ]]>
 	</select>
 

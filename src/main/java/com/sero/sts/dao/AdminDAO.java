@@ -10,18 +10,66 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
-
-import com.sero.sts.vo.MemberVO;
+import com.sero.sts.vo.OrderVO;
 import com.sero.sts.vo.ProductVO;
+import com.sero.sts.vo.QnaVO;
+import com.sero.sts.vo.MemberVO;
 
-@Repository("adminDAO")
-public class AdminDAO  {
-	
+
+@Repository
+public class AdminDAO {
+
 	static Logger logger = LoggerFactory.getLogger(AdminDAO.class);
+	
+	public AdminDAO() {
+		System.out.println("adminDAO 시작");
+	}
 
-    @Autowired
+	@Autowired
 	private SqlSession sqlSession;
-    
+
+	// qna 리스트
+	public List<QnaVO> qnaList() throws DataAccessException {
+		List<QnaVO> qnaList = sqlSession.selectList("mapper.mall.selectQna");
+
+		return qnaList;
+	}
+
+	// qna 상세
+	public QnaVO qnaDetail(int qseq) throws DataAccessException {
+		QnaVO qnaDetail = sqlSession.selectOne("mapper.mall.detailQna", qseq);
+		return qnaDetail;
+	}
+
+	// Qna 답변
+	public int updateQna(int qseq, String reply) throws DataAccessException {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("qseq", qseq);
+		params.put("reply", reply);
+
+		int result = sqlSession.update("mapper.mall.updateQna", params);
+		return result;
+	}
+	// -----------------------------------
+	
+	// order 리스트
+	public List<OrderVO> orderList(String mname) throws DataAccessException {
+	    Map<String, Object> paramMap = new HashMap<String, Object>();
+	    paramMap.put("mname", mname);
+
+	    List<OrderVO> orderList = sqlSession.selectList("mapper.mall.selectOrder", paramMap);
+	    return orderList;
+	}
+	
+	// order 주문 처리
+	public int updateOrder(int odseq) throws DataAccessException{
+		Map<String, Object> params = new HashMap<String,Object>();
+		params.put("odseq",odseq);
+		int result = sqlSession.update("mapper.mall.updateOrder", params);
+		return result;
+		
+	}
+
 	/**
 	 * @param id
 	 * @return selectOne 결과
@@ -46,7 +94,6 @@ public class AdminDAO  {
     }
  
     public int updateProduct(ProductVO product) throws DataAccessException {
-    	System.out.println("얄루얄루야루랴"+product.toString());
     	int result = sqlSession.update("mapper.mall.updateProduct", product);
     	return result;
     }
@@ -65,4 +112,5 @@ public class AdminDAO  {
 		int result = sqlSession.delete("mapper.mall.removeMember", id);
 		return result;
 	}
+
 }

@@ -27,7 +27,7 @@
 
 		} else {
 			
-			document.formm.action = contextPath + "/mypages/cartDelete";
+			document.formm.action = contextPath + "/userpages/cartDelete";
 			document.formm.submit();
 			alert("삭제완료 .");
 		}
@@ -35,7 +35,7 @@
 	
 	//전체 상품 구매 확정   
 	function go_order_insert(contextPath) {
-		document.formm.action = contextPath + "/mypages/orderInsert";
+		document.formm.action = contextPath + "/userpages/orderInsert";
 		document.formm.submit();
 		alert("최종 구매완료");
 
@@ -87,7 +87,7 @@
     <div class="clear"></div>
      
     <div id="buttons" style="float: right">
-      <input type="button" value="쇼핑 계속하기" class="cancel" onclick="location.href='${contextPath}/mall'">    
+      <input type="button" value="쇼핑 계속하기" class="cancel" onclick="location.href='${contextPath}/mall/mainPage'">    
       
       <c:if test= "${cartList.size() != 0}">
       	<input type="button" value="주문하기"  class="submit" onclick="go_order_insert('${contextPath}')">

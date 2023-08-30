@@ -31,13 +31,13 @@ public class MainDAO  {
 	}
 
 	// 상세 페이지
-	public ProductVO productDetail(int pseq) {
+	public ProductVO productDetail(int pseq) throws DataAccessException {	
 	    ProductVO productDetail = sqlsession.selectOne("mapper.mall.selectPseq", pseq);
 	    return productDetail;
 	}
 
 	// 상품 카테고리
-	public List<ProductVO> productKind(int kind) {
+	public List<ProductVO> productKind(int kind) throws DataAccessException{
 		List<ProductVO> productKind = sqlsession.selectList("mapper.mall.selectKind", kind);
 		return productKind;
 	}

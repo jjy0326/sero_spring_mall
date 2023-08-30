@@ -7,8 +7,9 @@
 	<h1>Admin Setting</h1>
 	<ul>
 		<li><a href='${contextPath}/admin/product/productList'> 상품리스트</a></li>
-		<li><a href='${contextPath}/admin/order/orderList'> 주문리스트</a></li>
-		<li><a href='${contextPath}/admin/member/memberList'> 회원리스트</a></li>
-		<li><a href='${contextPath}/admin/qna/qnaList'>Q&amp;A리스트</a></li>
+		<li><a href='${contextPath}/admin/orderList'> 주문리스트</a></li>
+		<li><a href='${contextPath}/admin/'> 회원리스트</a></li>
+		<li><a href='${contextPath}/admin/qnaPage'>Q&amp;A리스트</a></li>
+
 	</ul>
 </nav>

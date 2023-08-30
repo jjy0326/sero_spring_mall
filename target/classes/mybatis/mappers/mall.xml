@@ -99,7 +99,7 @@
 	<insert id="addProduct" parameterType="productVO">
 	<![CDATA[
 		insert into product(pseq, name, price1, price2, price3, content, image)
-		values(entryno_sequence.NEXTVAL, #{name}, #{price1}, #{price2}, #{price3}, #{content}, #{image})
+		values(proid_sequence.NEXTVAL, #{name}, #{price1}, #{price2}, #{price3}, #{content}, #{image})
 		]]>
 	</insert>
 

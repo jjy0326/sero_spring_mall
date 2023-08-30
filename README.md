@@ -5,7 +5,7 @@
 기존의 코드를 SPRING으로 변환
 
 ## ✨ 역할 분담
-1. 김준형 - Product, Mainpage
+1. 전준형 - Product, Mainpage
    
 3. 김효경 - Member
 4. 명원식 - Admin

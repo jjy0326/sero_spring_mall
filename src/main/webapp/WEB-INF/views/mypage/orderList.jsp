@@ -33,7 +33,7 @@
           
       <div class="clear"></div>
       <div id="buttons" style="float: right">
-       <input type="button"    value="쇼핑 계속하기"  class="cancel"  onclick="location.href='${contextPath}/mall'">     
+       <input type="button"    value="쇼핑 계속하기"  class="cancel"  onclick="location.href='${contextPath}/mall/mainPage'">     
       </div>
     </form>  
   </article>

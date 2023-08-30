@@ -36,7 +36,7 @@
 						<c:when test="${empty sessionScope.loginUser}">
 							<li><a href="${contextPath}/members/loginForm"
 								style="width: 110px;">LOGIN(CUSTOMER</a> <a
-								href="${contextPath}/admin"
+								href="${contextPath}/admin/"
 								style="width: 100px;">| ADMIN)</a></li>
 							<li>/</li>
 							<li><a href="${contextPath}/members/contract">JOIN</a></li>
@@ -44,7 +44,7 @@
 						<c:otherwise>
 							<li style="color: black">
 								${sessionScope.loginUser.name}(${sessionScope.loginUser.id})</li>
-							<li><a href="${contextPath}/userpages/logout">LOGOUT</a></li>
+							<li><a href="${contextPath}/members/logout">LOGOUT</a></li>
 						</c:otherwise>
 					</c:choose>
 					<li>/</li>

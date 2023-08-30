@@ -36,7 +36,7 @@ public class UserLoginController {
 			session.setAttribute("loginUser", loginService.login(id, pwd));
 			return "redirect:/mall/mainPage";
 		}
-		return "redirect:/members/login_fail";
+		return "member/login_fail";
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
@@ -45,7 +45,7 @@ public class UserLoginController {
 		if (session != null)
 			session.invalidate();
 
-		return "redirect:/product";
+		return "redirect:/mall/mainPage";
 	}
 
 	@RequestMapping(value = "/joinForm", method = { RequestMethod.GET, RequestMethod.POST })
@@ -61,7 +61,7 @@ public class UserLoginController {
 		String address = request.getParameter("addr1") + request.getParameter("addr2");
 		memberVO.setAddress(address);
 		loginService.join(memberVO);
-		return "member/join";
+		return "redirect:/mall/mainPage";
 	}
 
 	@RequestMapping(value = "/contract", method = { RequestMethod.GET, RequestMethod.POST })

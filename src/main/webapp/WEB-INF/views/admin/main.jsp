@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Admin</title>
-<link rel="stylesheet" href="${contextPath}/admin/css/admin.css">
+<link rel="stylesheet" href="${contextPath}/resources/admin/css/admin.css">
 <script type="text/javascript">
 	function worker_check() {
 		if (document.frm.workId.value == "") {
@@ -28,8 +28,8 @@
 	<div id="wrap">
 		<header>
 			<div id="logo">
-				<a href="${contextPath}/mall"> <img src="${contextPath}/admin/images/bar_01.gif"
-					style="float: left"> <img src="${contextPath}/admin/images/text.gif">
+				<a href="${contextPath}/mall/mainPage"> <img src="${contextPath}/resources/admin/images/bar_01.gif"
+					style="float: left"> <img src="${contextPath}/resources/admin/images/text.gif">
 				</a>
 			</div>
 		</header>

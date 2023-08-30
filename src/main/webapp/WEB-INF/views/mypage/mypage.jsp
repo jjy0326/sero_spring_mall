@@ -48,6 +48,7 @@
         <td> <fmt:formatDate value="${orderVO.indate}" type="date"/></td>
         <td> ${orderVO.oseq} </td>    
         <td> ${orderVO.pname} </td>
+        
         <td> <fmt:formatNumber value="${orderVO.price2}" type="currency"/> </td>
         <td> <a href="${contextPath}/userpages/orderDetail?oseq=${orderVO.oseq}"> 조회 </a></td>
       </tr>
@@ -56,7 +57,7 @@
           
       <div class="clear"></div>
       <div id="buttons" style="float: right">
-       <input type="button"    value="쇼핑 계속하기"  class="cancel"  onclick="location.href='${contextPath}/mall'"> 
+       <input type="button"    value="쇼핑 계속하기"  class="cancel"  onclick="location.href='${contextPath}/mall/mainPage'"> 
       </div>
     </form>  
   </article>

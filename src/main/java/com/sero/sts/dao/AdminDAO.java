@@ -21,10 +21,6 @@ public class AdminDAO {
 
 	static Logger logger = LoggerFactory.getLogger(AdminDAO.class);
 	
-	public AdminDAO() {
-		System.out.println("adminDAO 시작");
-	}
-
 	@Autowired
 	private SqlSession sqlSession;
 
@@ -82,8 +78,10 @@ public class AdminDAO {
     	return sqlSession.selectOne("checkWorker", params);
     }
     
-    public List<ProductVO> showProductList() throws DataAccessException {
-    	List<ProductVO> productList = sqlSession.selectList("mapper.mall.showProductList");
+    public List<ProductVO> showProductList(String name) throws DataAccessException {
+    	Map<String, Object> params = new HashMap<String,Object>();
+    	params.put("name",name);
+    	List<ProductVO> productList = sqlSession.selectList("mapper.mall.showProductList", params);
     	return productList;
     }
 
@@ -103,8 +101,10 @@ public class AdminDAO {
 		return result;
 	}
 
-    public List<MemberVO> showMemberList() throws DataAccessException {
-    	List<MemberVO> memberList = sqlSession.selectList("mapper.mall.showMemberList");
+    public List<MemberVO> showMemberList(String name) throws DataAccessException {
+     	Map<String, Object> params = new HashMap<String,Object>();  	
+     	params.put("name",name);
+    	List<MemberVO> memberList = sqlSession.selectList("mapper.mall.showMemberList", params);
     	return memberList;
     }
 

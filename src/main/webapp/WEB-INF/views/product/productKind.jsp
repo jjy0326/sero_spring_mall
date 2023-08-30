@@ -1,4 +1,4 @@
-99999<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>  
    
 
@@ -18,7 +18,7 @@
     <c:forEach items="${productVO }"  var="productVO">
       <div id="item">
         <a href="${contextPath}/mall/productDetail?pseq=${productVO.pseq}"> 
-          <img src="../resources/product_images/${productVO.image}" />
+          <img src="${contextPath}/resources/product_images/${productVO.image}" />
           <h3>${productVO.name} </h3>        
           <p>${productVO.price2} </p>
         </a>  

@@ -12,10 +12,6 @@ import com.sero.sts.vo.ProductVO;
 @Service
 public class MainService  {
 
-	public MainService() {
-	System.out.println("service");
-	}
-	
 	@Autowired
     private MainDAO mainDAO;
 	

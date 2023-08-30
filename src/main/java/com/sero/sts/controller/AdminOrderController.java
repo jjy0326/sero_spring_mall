@@ -17,14 +17,10 @@ import com.sero.sts.vo.OrderVO;
 @Controller
 public class AdminOrderController {
 
-	public AdminOrderController() {
-		System.out.println("관리자 오더 시작");
-	}
-
 	@Autowired
 	private AdminService adminService;
 
-	@RequestMapping(value = "/orderList", method = RequestMethod.GET)
+	@RequestMapping(value = "/orderList", method = { RequestMethod.GET, RequestMethod.POST })
 	public String OrderList(Model model, @RequestParam(value = "key", required = false) String key) throws Exception {
 
 		List<OrderVO> orderList = adminService.orderList(key);

@@ -30,14 +30,8 @@ public class UserPageController {
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
 	public String mypage(Model model, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		
-		
-//		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		MemberVO loginUser = new MemberVO();
-		loginUser.setId("one");
-		System.out.println(loginUser);
-		session.setAttribute("id", "one");
+		HttpSession session = request.getSession();				
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		
 		if (loginUser == null)
 			return "redirect:/members/loginForm";
@@ -54,11 +48,8 @@ public class UserPageController {
 	@RequestMapping(value = "/orderDetail", method = RequestMethod.GET)
 	private String orderDetail(@RequestParam("oseq") Integer oseq, Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-//		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		MemberVO loginUser = new MemberVO();
-		loginUser.setId("one");
-		System.out.println(loginUser);
-		session.setAttribute("id", "one");
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
 		if (loginUser == null)
 			return "redirect:/members/loginForm";
 		else {
@@ -78,11 +69,8 @@ public class UserPageController {
 	@RequestMapping(value = "/orderAll", method = RequestMethod.GET)
 	public String orderAll(Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-//		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		MemberVO loginUser = new MemberVO();
-		loginUser.setId("one");
-		System.out.println(loginUser);
-		session.setAttribute("id", "one");
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
 		if (loginUser == null)
 			return "redirect:/members/loginForm";
 		else {
@@ -97,11 +85,8 @@ public class UserPageController {
 	private String orderList(Model model, HttpServletRequest request) {
 
 		HttpSession session = request.getSession();
-//		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		MemberVO loginUser = new MemberVO();
-		loginUser.setId("one");
-		System.out.println(loginUser);
-		session.setAttribute("id", "one");
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
 		if (loginUser == null)
 			return "redirect:/members/loginForm";
 		else {
@@ -115,11 +100,8 @@ public class UserPageController {
 	@RequestMapping(value = "/orderInsert", method = RequestMethod.POST)
 	private String orderInsert(Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-//		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		MemberVO loginUser = new MemberVO();
-		loginUser.setId("one");
-		System.out.println(loginUser);
-		session.setAttribute("id", "one");
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
 		if (loginUser == null) {
 			return "redirect:/members/loginForm";
 		} 
@@ -132,11 +114,8 @@ public class UserPageController {
 	@RequestMapping(value = "/cartList", method = RequestMethod.GET)
 	private String cartList(Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-//		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		MemberVO loginUser = new MemberVO();
-		loginUser.setId("one");
-		System.out.println(loginUser);
-		session.setAttribute("id", "one");
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
 		if (loginUser == null) {
 			return "redirect:/members/loginForm";
 		} 
@@ -152,11 +131,8 @@ public class UserPageController {
 	@RequestMapping(value = "/cartInsert", method = RequestMethod.POST)
 	private String cartInsert(@RequestParam("pseq") String pseq, @RequestParam("quantity") String quantity, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-//		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		MemberVO loginUser = new MemberVO();
-		loginUser.setId("one");
-		System.out.println(loginUser);
-		session.setAttribute("id", "one");
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
 		if (loginUser == null) {
 			return "redirect:/members/loginForm";
 		} 
@@ -172,11 +148,8 @@ public class UserPageController {
 	@RequestMapping(value = "/cartDelete", method = RequestMethod.POST)
 	private String cartDelete(@RequestParam("cseq") String[] cseqArr, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-//		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		MemberVO loginUser = new MemberVO();
-		loginUser.setId("one");
-		System.out.println(loginUser);
-		session.setAttribute("id", "one");
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
 		if (loginUser == null) {
 			return "redirect:/members/loginForm";
 		}
@@ -190,11 +163,8 @@ public class UserPageController {
 	@RequestMapping(value = "/orderNowInsert", method = RequestMethod.POST)
 	private String orderNowInsert(HttpServletRequest request) {			
 		HttpSession session = request.getSession();
-//		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		MemberVO loginUser = new MemberVO();
-		loginUser.setId("one");
-		System.out.println(loginUser);
-		session.setAttribute("id", "one");
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
 		if (loginUser == null) {
 			return "redirect:/members/loginForm";
 		} else {

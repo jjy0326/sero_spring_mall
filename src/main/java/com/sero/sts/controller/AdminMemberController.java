@@ -24,10 +24,10 @@ public class AdminMemberController {
 
 	static Logger logger = LoggerFactory.getLogger(AdminMainController.class);
 
-	@RequestMapping(value="/memberList", method=RequestMethod.GET)
-	public String memberList(Model model) {
-	    List<MemberVO> memberList = adminService.showMemberList();
-	    
+	@RequestMapping(value="/memberList", method = { RequestMethod.GET, RequestMethod.POST })
+	public String memberList(Model model, @RequestParam(value = "key", required = false) String key) throws Exception {
+	    List<MemberVO> memberList = adminService.showMemberList(key);
+	    System.out.println(key);
 	    model.addAttribute("memberList", memberList);
 
 	    return "admin/member/memberList";

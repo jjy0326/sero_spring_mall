@@ -15,10 +15,7 @@ import com.sero.sts.vo.ProductVO;
 
 @Controller
 public class UserMainController {
-	public UserMainController() {
-		System.out.println("컨트롤러 ");
-	}
-	
+
 	@Autowired
 	private MainService mainService;
 

@@ -17,10 +17,6 @@ import com.sero.sts.vo.QnaVO;
 @Controller
 public class AdminQnaController {
 
-	public AdminQnaController() {
-		System.out.println("admin Controller 시작");
-	}
-
 	@Autowired
 	AdminService adminService;
 
@@ -50,7 +46,7 @@ public class AdminQnaController {
 		int qseqs = Integer.parseInt(qseq);
 		int qnaVO = adminService.qnaUpdate(qseqs, reply);
         model.addAttribute("qnaVO",qnaVO);
-		return "redirect:/admin/qna/qnaList";
+		return "redirect:/admin/qnaPage";
 	}
 
 }

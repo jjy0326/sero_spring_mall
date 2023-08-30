@@ -9,7 +9,7 @@
 <script type="text/javascript">
 	function go_search(contextPath) { // 상품 목록에서 keyword 검색
 		document.frm.action = contextPath
-				+ "/mall/member/AdminMemberListAction.do";
+				+ "/admin/member/memberList";
 		document.frm.submit();
 	}
 	
@@ -25,7 +25,7 @@
 
 <article>
 	<h1>회원리스트</h1>
-	<form name="frm" method="post" action="${contextPath}/admin/member/remove">
+	<form name="frm" method="post">
 		<table style="float: right;">
 			<tr>
 				<td>회원 이름 <input type="text" name="key"> <input
@@ -67,7 +67,7 @@
 			</c:forEach>
 		</table>
 <%-- 		<input type="button" class="btn" style="width: 200px" value="강퇴 처리 (확인)" onClick="go_ban('${contextPath}')"> --%>
-		<input type="submit" class="btn" style="width: 200px" value="강퇴 처리 (확인)">
+		<input type="submit" class="btn" style="width: 200px" value="강퇴 처리 (확인)" onclick="go_ban('${contextPath}')">
 	</form>
 </article>
 <%@ include file="../footer.jsp"%>

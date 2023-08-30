@@ -29,7 +29,7 @@ public class AdminMainController {
 	 * @author 명원식
 	 * @return "admin/main"
 	 **/
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String adminIndex() {
 		return "admin/main";
 	}
@@ -69,7 +69,7 @@ public class AdminMainController {
 		if (sessionCheck != null) {
 			session.invalidate();
 		}
-		return "admin/main";
+		return "mainPage";
 	}
 
 

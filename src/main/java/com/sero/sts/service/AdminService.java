@@ -20,10 +20,6 @@ import com.sero.sts.vo.ProductVO;
 @Service("adminService")
 @Transactional(propagation = Propagation.REQUIRED)
 public class AdminService{
-	
-	public AdminService() {
-		System.out.println("관리자  서비스 시작");
-	}
 
 	static Logger logger = LoggerFactory.getLogger(AdminService.class);
 
@@ -73,8 +69,8 @@ public class AdminService{
     	return result ==1;
 	}
 
-	public List<ProductVO> showProductList() throws DataAccessException {
-		List<ProductVO> productList = adminDAO.showProductList();
+	public List<ProductVO> showProductList(String key) throws DataAccessException {
+		List<ProductVO> productList = adminDAO.showProductList(key);
 		return productList;
 	}
 	
@@ -91,8 +87,8 @@ public class AdminService{
 		return adminDAO.addProduct(product);
 	}
 
-	public List<MemberVO> showMemberList() throws DataAccessException {
-		List<MemberVO> memberList = adminDAO.showMemberList();
+	public List<MemberVO> showMemberList(String key) throws DataAccessException {
+		List<MemberVO> memberList = adminDAO.showMemberList(key);
 		return memberList;
 	}
 

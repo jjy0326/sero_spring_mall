@@ -14,10 +14,6 @@ public class MainDAO  {
 	@Autowired
 	private SqlSession sqlsession;
 	
-	public MainDAO() {
-	   System.out.println("DAO");
-	}
-	
 	// 신상품
 	public List<ProductVO> selectNewList() throws DataAccessException{
 		List<ProductVO> newList = sqlsession.selectList("mapper.mall.newProduct");	

@@ -25,7 +25,7 @@ function go_cart(contextPath) {
 	    }
 
 function go_order(contextPath) {
-	 document.formm.action = contextPath + "/userpages/orderInsert";
+	 document.formm.action = contextPath + "/userpages/orderNowInsert";
 	  document.formm.submit();
 	  alert("최종 구매완료");
 	
@@ -45,7 +45,7 @@ function go_order(contextPath) {
           <legend> Item detail Info</legend>  
           <a href="${contextPath}/mall/productDetail?pseq=${productVO.pseq}">         
             <span style="float: left;">
-              <img  src="../resources/product_images/${productVO.image}"  />
+              <img  src="${contextPath}/resources/product_images/${productVO.image}"  />
             </span>              
             <h2> ${productVO.name} </h2>  
           </a>    

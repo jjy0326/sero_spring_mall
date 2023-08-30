@@ -67,9 +67,11 @@ public class AdminProductController {
 	}
 
 	@RequestMapping(value = "/updateForm/{pseq}", method = RequestMethod.GET)
-	public String updateForm(@PathVariable("pseq") int pseq, Model model) {
+	public String updateForm(@PathVariable("pseq") int pseq, Model model, HttpServletRequest request) {
 		ProductVO productVO = adminService.selectProduct(pseq);
 		
+		String kindList[] = { "Heels", "Boots", "Sandals", "Slippers", "Sneakers", "Sale" };
+		request.setAttribute("kindList", kindList);
 		model.addAttribute("productVO", productVO);
 		
 		return "admin/product/productUpdate";

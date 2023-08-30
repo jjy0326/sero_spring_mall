@@ -35,8 +35,8 @@ public class AdminMemberController {
 	
 	@RequestMapping(value="/remove", method=RequestMethod.POST)
 	public String removeMember(@RequestParam("useyn") String id) throws Exception {
-		logger.info("id" + id);
 		adminService.removeMember(id);
+		logger.info("강퇴한 id : " + id);
 		return "redirect:/admin/member/memberList/";
 
 	}

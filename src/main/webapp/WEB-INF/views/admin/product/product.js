@@ -65,7 +65,7 @@ function go_mov(contextPath, tpage) // 상품 목록으로 돌아가기
 }
 
 function go_search(contextPath) { // 상품 목록에서 keyword 검색
-	document.frm.action = contextPath + "/mall/product/AdminProductListAction.do";
+	document.frm.action = contextPath + "/admin/product/productList";
 	document.frm.submit();
 }
 

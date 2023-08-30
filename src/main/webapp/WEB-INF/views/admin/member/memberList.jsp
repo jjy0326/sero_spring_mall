@@ -9,7 +9,7 @@
 <script type="text/javascript">
 	function go_search(contextPath) { // 상품 목록에서 keyword 검색
 		document.frm.action = contextPath
-				+ "/mall/member/AdminMemberListAction.do";
+				+ "/admin/member/memberList";
 		document.frm.submit();
 	}
 	

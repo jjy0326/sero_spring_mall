@@ -30,7 +30,7 @@ git branch 사용하여 협업
 ![modifycode](https://github.com/jjy0326/sero_spring_mall/assets/102834723/be4ff49d-0d39-4901-b5ee-03de3b1c5aad)
 ### 2. 애너테이션(@) 사용
 ![annotation](https://github.com/jjy0326/sero_spring_mall/assets/102834723/516af7b6-d659-4ba8-bf0c-a2bc9ce79f58)
-### 3. 로그 사용
+### 3. System.out.println() 대신 로그 사용
 ![log](https://github.com/jjy0326/sero_spring_mall/assets/102834723/01202fb7-2bf3-47d9-9cbe-8ae14c7ce4a9)
 ![log_result](https://github.com/jjy0326/sero_spring_mall/assets/102834723/8278e1d2-5acc-4911-8ca9-48ea2fb28672)
 
